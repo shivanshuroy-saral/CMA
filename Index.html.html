@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Initiative Gallery Hub</title>
+<style type="text/css">
+        :root {
+            --primary: #1a2a6c;
+            --secondary: #b21f1f;
+            --accent: #27ae60;
+            --bg: #f4f7f6;
+            --card-bg: #ffffff;
+        }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; background: var(--bg); color: #333; margin: 0; }
+        header { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; padding: 3rem 2rem; text-align: center; }
+        nav { background: white; padding: 1rem; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.1); display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+        nav a { text-decoration: none; color: var(--primary); font-weight: bold; font-size: 0.85rem; padding: 5px 10px; border-radius: 4px; transition: background 0.3s; }
+        nav a:hover { background: #eee; }
+        .container { max-width: 1200px; margin: 20px auto; padding: 0 20px; }
+        h2 { border-left: 5px solid var(--accent); padding-left: 15px; margin-top: 40px; color: var(--primary); text-transform: uppercase; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+        .card { background: var(--card-bg); border-radius: 8px; padding: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); display: flex; flex-direction: column; }
+        .card h3 { margin-top: 0; color: var(--secondary); font-size: 1.1rem; min-height: 3em; }
+        .meta { font-size: 0.85rem; color: #666; margin-bottom: 10px; flex-grow: 0; }
+        .desc { font-size: 0.9rem; margin-bottom: 15px; flex-grow: 1; }
+        .links { display: flex; gap: 10px; flex-wrap: wrap; }
+        .btn { padding: 10px 12px; border-radius: 4px; text-decoration: none; font-size: 0.8rem; font-weight: bold; text-align: center; width: 100%; box-sizing: border-box; background: #3498db; color: white; transition: background 0.2s; }
+        .btn:hover { background: #2980b9; }
+        footer { text-align: center; padding: 40px; color: #777; font-size: 0.9rem; border-top: 1px solid #ddd; margin-top: 5px; }
+</style>
+</head>
+<body>
+<header>
+<h1>Initiative Gallery</h1>
+<p>A Comprehensive Compilation of Innovative Solutions Developed by University Students Across India.</p>
+</header>
+
+<nav>
+    <a href="#climate">Climate &amp; Agriculture</a> 
+    <a href="#edu">Education &amp; Skills</a> 
+    <a href="#gender">Social Inclusion</a> 
+    <a href="#gov">Governance</a> 
+    <a href="#health">Health &amp; Nutrition</a> 
+    <a href="#live">Livelihood</a>
+</nav>
+
+<div class="container">
+<h2 id="climate">Climate, Environment &amp; Agriculture</h2>
+<div class="grid">
+<div class="card">
+<h3>1. FarmPulse AI</h3>
+<p class="meta"><b>Institution:</b> Netaji Subhas University of Technology | <b>Location:</b> New Delhi</p>
+<p class="desc">AI early warning system for crop stress detection (pests, water, nutrients).</p>
+<div class="links"><a class="btn" href="detail.html?id=farmpulse">Know More</a></div>
+</div>
+<div class="card">
+<h3>2. Climate Disaster Response</h3>
+<p class="meta"><b>Institution:</b> Regional College of Management | <b>Location:</b> Bhubaneswar, Odisha</p>
+<p class="desc">Real-time data processing for flood and cyclone emergency insights.</p>
+<div class="links"><a class="btn" href="detail.html?id=climatedisaster">Know More</a></div>
+</div>
+<div class="card">
+<h3>3. AgroWise</h3>
+<p class="meta"><b>Institution:</b> Indian Institute of Technology Kharagpur | <b>Location:</b> Kharagpur, West Bengal</p>
+<p class="desc">Smart agriculture platform for resource optimization and irrigation.</p>
+<div class="links"><a class="btn" href="detail.html?id=agrowise">Know More</a></div>
+</div>
+<div class="card">
+<h3>4. Sular App</h3>
+<p class="meta"><b>Institution:</b> KSR Rangasamy College of Technology | <b>Location:</b> Tiruchengode, Tamil Nadu</p>
+<p class="desc">Digital solution promoting environmental awareness and eco-friendly practices.</p>
+<div class="links"><a class="btn" href="detail.html?id=sularapp">Know More</a></div>
+</div>
+<div class="card">
+<h3>5. EcoTrace AI</h3>
+<p class="meta"><b>Institution:</b> KSR Rangasamy College of Technology | <b>Location:</b> Tiruchengode, Tamil Nadu</p>
+<p class="desc">AI monitoring for environmental changes and conservation insights.</p>
+<div class="links"><a class="btn" href="detail.html?id=ecotrace">Know More</a></div>
+</div>
+<div class="card">
+<h3>6. AGRIORBIT</h3>
+<p class="meta"><b>Institution:</b> KSR Rangasamy College of Technology | <b>Location:</b> Tiruchengode, Tamil Nadu</p>
+<p class="desc">Integrates crop management and resource tracking into one platform.</p>
+<div class="links"><a class="btn" href="detail.html?id=agriorbit">Know More</a></div>
+</div>
+<div class="card">
+<h3>7. Smart Farm Decision Support</h3>
+<p class="meta"><b>Institution:</b> KSR Rangasamy College of Technology | <b>Location:</b> Tiruchengode, Tamil Nadu</p>
+<p class="desc">Data-driven insights tailored to local conditions for small farmers.</p>
+<div class="links"><a class="btn" href="detail.html?id=smartfarm">Know More</a></div>
+</div>
+<div class="card">
+<h3>8. Flowchart</h3>
+<p class="meta"><b>Institution:</b> KSR Rangasamy College of Technology | <b>Location:</b> Tiruchengode, Tamil Nadu</p>
+<p class="desc">Simplifies workflows and improves process efficiency across domains.</p>
+<div class="links"><a class="btn" href="detail.html?id=flowchart">Know More</a></div>
+</div>
+<div class="card">
+<h3>9. Secure Data Wiping</h3>
+<p class="meta"><b>Institution:</b> KSR Rangasamy College of Technology | <b>Location:</b> Tiruchengode, Tamil Nadu</p>
+<p class="desc">E-waste solution for secure data erasing during IT asset recycling.</p>
+<div class="links"><a class="btn" href="detail.html?id=securedata">Know More</a></div>
+</div>
+<div class="card">
+<h3>10. Cattlenes</h3>
+<p class="meta"><b>Institution:</b> KSR Rangasamy College of Technology | <b>Location:</b> Tiruchengode, Tamil Nadu</p>
+<p class="desc">Livestock monitoring for cattle health and productivity tracking.</p>
+<div class="links"><a class="btn" href="detail.html?id=cattlenes">Know More</a></div>
+</div>
+<div class="card">
+<h3>11. Sustainability Project</h3>
+<p class="meta"><b>Institution:</b> Netaji Subhas University of Technology | <b>Location:</b> New Delhi</p>
+<p class="desc">Effort toward addressing environmental awareness and resource management.</p>
+<div class="links"><a class="btn" href="detail.html?id=sustainability">Know More</a></div>
+</div>
+<div class="card">
+<h3>12. MITTIE</h3>
+<p class="meta"><b>Institution:</b> University of Engineering and Management | <b>Location:</b> Kolkata, West Bengal</p>
+<p class="desc">Agriculture-focused resource utilization and decision-making tool.</p>
+<div class="links"><a class="btn" href="detail.html?id=mittie">Know More</a></div>
+</div>
+<div class="card">
+<h3>13. Wildlife Monitoring Drone</h3>
+<p class="meta"><b>Institution:</b> IILM University | <b>Location:</b> Gurugram, Haryana</p>
+<p class="desc">Autonomous drone system for real-time monitoring and threat detection.</p>
+<div class="links"><a class="btn" href="detail.html?id=wildlifedrone">Know More</a></div>
+</div>
+<div class="card">
+<h3>14. Disastro</h3>
+<p class="meta"><b>Institution:</b> Not Specified | <b>Location:</b> India</p>
+<p class="desc">Disaster management for emergency preparedness and planning.</p>
+<div class="links"><a class="btn" href="detail.html?id=disastro">Know More</a></div>
+</div>
+<div class="card">
+<h3>15. Bhoomitra</h3>
+<p class="meta"><b>Institution:</b> Ajay Kumar Garg Engineering College | <b>Location:</b> Ghaziabad, Uttar Pradesh</p>
+<p class="desc">AI-enabled community composting system to optimize waste decomposition.</p>
+<div class="links"><a class="btn" href="detail.html?id=bhoomitra">Know More</a></div>
+</div>
+<div class="card">
+<h3>16. JalNidhi</h3>
+<p class="meta"><b>Institution:</b> Sanskriti University | <b>Location:</b> Mathura, Uttar Pradesh</p>
+<p class="desc">AI-optimized rooftop rainwater harvesting for sustainable water usage.</p>
+<div class="links"><a class="btn" href="detail.html?id=jalnidhi">Know More</a></div>
+</div>
+<div class="card">
+<h3>17. Quantum X Sustainability</h3>
+<p class="meta"><b>Institution:</b> Sanskriti University | <b>Location:</b> Mathura, Uttar Pradesh</p>
+<p class="desc">Technological innovation toward solving environmental challenges.</p>
+<div class="links"><a class="btn" href="detail.html?id=quantumx">Know More</a></div>
+</div>
+<div class="card">
+<h3>18. AI Livestock Monitor</h3>
+<p class="meta"><b>Institution:</b> KSR Rangasamy College of Technology | <b>Location:</b> Tiruchengode, Tamil Nadu</p>
+<p class="desc">Tracks animal health and behavior to improve livestock efficiency.</p>
+<div class="links"><a class="btn" href="detail.html?id=ailivestock">Know More</a></div>
+</div>
+<div class="card">
+<h3>19. KISSAN PAY</h3>
+<p class="meta"><b>Institution:</b> Visvesvaraya Institute of Technology | <b>Location:</b> Warangal, Telangana</p>
+<p class="desc">Seamless digital payment system for agricultural transactions.</p>
+<div class="links"><a class="btn" href="detail.html?id=kissanpay">Know More</a></div>
+</div>
+<div class="card">
+<h3>20. Circuit 25 Innovation</h3>
+<p class="meta"><b>Institution:</b> Dwarkadas J. Sanghvi College of Engineering | <b>Location:</b> Mumbai, Maharashtra</p>
+<p class="desc">Technology-driven solutions addressing climate and sustainability challenges.</p>
+<div class="links"><a class="btn" href="detail.html?id=circuit25">Know More</a></div>
+</div>
+<div class="card">
+<h3>21. EcoSort</h3>
+<p class="meta"><b>Institution:</b> KSR Rangasamy College of Technology | <b>Location:</b> Tiruchengode, Tamil Nadu</p>
+<p class="desc">Efficient sorting and recycling processes for waste management.</p>
+<div class="links"><a class="btn" href="detail.html?id=ecosort">Know More</a></div>
+</div>
+<div class="card">
+<h3>22. WildGuard AI</h3>
+<p class="meta"><b>Institution:</b> KSR Rangasamy College of Technology | <b>Location:</b> Tiruchengode, Tamil Nadu</p>
+<p class="desc">Drone tech to detect animals and threats in real-time to prevent conflict.</p>
+<div class="links"><a class="btn" href="detail.html?id=wildguard">Know More</a></div>
+</div>
+<div class="card">
+<h3>23. AgroKheti</h3>
+<p class="meta"><b>Institution:</b> Not Specified | <b>Location:</b> India</p>
+<p class="desc">AI personal assistant for farmers providing crop management guidance.</p>
+<div class="links"><a class="btn" href="detail.html?id=agrokheti">Know More</a></div>
+</div>
+<div class="card">
+<h3>24. KisanJi</h3>
+<p class="meta"><b>Institution:</b> Graphic Era University | <b>Location:</b> Dehradun, Uttarakhand</p>
+<p class="desc">Digital platform providing accessible tools for better farming practices.</p>
+<div class="links"><a class="btn" href="detail.html?id=kisanji">Know More</a></div>
+</div>
+</div>
+
+<h2 id="edu">Education &amp; Skill Development</h2>
+<div class="grid">
+<div class="card">
+<h3>1. AI Mock Interview</h3>
+<p class="meta"><b>Institution:</b> KSR Rangasamy College of Technology | <b>Location:</b> Tiruchengode, Tamil Nadu</p>
+<p class="desc">Simulates real interview scenarios with AI feedback on communication.</p>
+<div class="links"><a class="btn" href="detail.html?id=aimock">Know More</a></div>
+</div>
+<div class="card">
+<h3>2. Sahayak AI</h3>
+<p class="meta"><b>Institution:</b> Amrita Vishwa Vidyapeetham | <b>Location:</b> Coimbatore, Tamil Nadu</p>
+<p class="desc">Personalized educational assistant (Shiksha Saathi).</p>
+<div class="links"><a class="btn" href="detail.html?id=sahayakai">Know More</a></div>
+</div>
+<div class="card">
+<h3>3. EduGrant AI</h3>
+<p class="meta"><b>Institution:</b> MGM College | <b>Location:</b> Udupi, Karnataka</p>
+<p class="desc">Simplifies search and application for scholarships and funding.</p>
+<div class="links"><a class="btn" href="detail.html?id=edugrant">Know More</a></div>
+</div>
+<div class="card">
+<h3>4. Dreamweaver AI</h3>
+<p class="meta"><b>Institution:</b> Government Polytechnic | <b>Location:</b> Rampur, Uttar Pradesh</p>
+<p class="desc">Guidance platform for informed career and learning decisions.</p>
+<div class="links"><a class="btn" href="detail.html?id=dreamweaver">Know More</a></div>
+</div>
+<div class="card">
+<h3>5. OnLearn</h3>
+<p class="meta"><b>Institution:</b> Indian Institute of Technology Roorkee | <b>Location:</b> Roorkee, Uttarakhand</p>
+<p class="desc">Digital learning platform with structured skill pathways.</p>
+<div class="links"><a class="btn" href="detail.html?id=onlearn">Know More</a></div>
+</div>
+<div class="card">
+<h3>6. MemexLLM</h3>
+<p class="meta"><b>Institution:</b> Bharati Vidyapeeth's College of Engineering | <b>Location:</b> New Delhi</p>
+<p class="desc">Knowledge system for enhanced retrieval and memory retention.</p>
+<div class="links"><a class="btn" href="detail.html?id=memexllm">Know More</a></div>
+</div>
+<div class="card">
+<h3>7. Guru-G</h3>
+<p class="meta"><b>Institution:</b> GL Bajaj Institute of Technology and Management | <b>Location:</b> Greater Noida, Uttar Pradesh</p>
+<p class="desc">Offline, multilingual platform for low-connectivity education.</p>
+<div class="links"><a class="btn" href="detail.html?id=gurug">Know More</a></div>
+</div>
+<div class="card">
+<h3>8. OcculoCommand</h3>
+<p class="meta"><b>Institution:</b> Chandigarh University | <b>Location:</b> Mohali, Punjab</p>
+<p class="desc">Assistive interaction tool via alternative digital input methods.</p>
+<div class="links"><a class="btn" href="detail.html?id=occulocommand">Know More</a></div>
+</div>
+<div class="card">
+<h3>9. Infrastructure Monitoring</h3>
+<p class="meta"><b>Institution:</b> Not Specified | <b>Location:</b> India</p>
+<p class="desc">Focuses on tracking and improving operational efficiency in systems.</p>
+<div class="links"><a class="btn" href="detail.html?id=inframonitor">Know More</a></div>
+</div>
+<div class="card">
+<h3>10. TOTOCHAN</h3>
+<p class="meta"><b>Institution:</b> KSR Rangasamy College of Technology | <b>Location:</b> Tiruchengode, Tamil Nadu</p>
+<p class="desc">Interactive platform to make teaching more enjoyable for students.</p>
+<div class="links"><a class="btn" href="detail.html?id=totochan">Know More</a></div>
+</div>
+</div>
+
+<h2 id="gender">Gender Equality &amp; Social Inclusion</h2>
+<div class="grid">
+<div class="card">
+<h3>1. Living Memory</h3>
+<p class="meta"><b>Institution:</b> Gandhi Institute for Technological Advancement | <b>Location:</b> Bhubaneswar, Odisha</p>
+<p class="desc">AI to preserve personal memories for elderly individuals.</p>
+<div class="links"><a class="btn" href="detail.html?id=livingmemory">Know More</a></div>
+</div>
+<div class="card">
+<h3>2. SENTINEL VISION</h3>
+<p class="meta"><b>Institution:</b> KSR Rangasamy College of Technology | <b>Location:</b> Tiruchengode, Tamil Nadu</p>
+<p class="desc">Safety-driven solution using vision technology.</p>
+<div class="links"><a class="btn" href="detail.html?id=sentinelvision">Know More</a></div>
+</div>
+<div class="card">
+<h3>3. CodeNetra-AI</h3>
+<p class="meta"><b>Institution:</b> Baba Vishwanath College | <b>Location:</b> Uttar Pradesh</p>
+<p class="desc">Assistive application for inclusive and user-friendly digital systems.</p>
+<div class="links"><a class="btn" href="detail.html?id=codenetra">Know More</a></div>
+</div>
+<div class="card">
+<h3>4. Decipher.io</h3>
+<p class="meta"><b>Institution:</b> Indira Gandhi Delhi Technical University for Women + Delhi Technological University | <b>Location:</b> New Delhi</p>
+<p class="desc">Empowers users and promotes equitable access to resources.</p>
+<div class="links"><a class="btn" href="detail.html?id=decipher">Know More</a></div>
+</div>
+<div class="card">
+<h3>5. Asha AI</h3>
+<p class="meta"><b>Institution:</b> Harcourt Butler Technical University | <b>Location:</b> Kanpur, Uttar Pradesh</p>
+<p class="desc">Provides guidance and resource access for underserved communities.</p>
+<div class="links"><a class="btn" href="detail.html?id=ashaai">Know More</a></div>
+</div>
+<div class="card">
+<h3>6. SheBuilds Inclusion</h3>
+<p class="meta"><b>Institution:</b> Kalinga Institute of Industrial Technology | <b>Location:</b> Bhubaneswar, Odisha</p>
+<p class="desc">Focuses on gender inclusion and empowerment through tech.</p>
+<div class="links"><a class="btn" href="detail.html?id=shebuilds">Know More</a></div>
+</div>
+<div class="card">
+<h3>7. SHE CARE</h3>
+<p class="meta"><b>Institution:</b> Not Specified | <b>Location:</b> India</p>
+<p class="desc">Social impact project for women's health, safety, and well-being.</p>
+<div class="links"><a class="btn" href="detail.html?id=shecare">Know More</a></div>
+</div>
+<div class="card">
+<h3>8. AccessBot</h3>
+<p class="meta"><b>Institution:</b> GL Bajaj Institute of Technology and Management | <b>Location:</b> Greater Noida, Uttar Pradesh</p>
+<p class="desc">AI-driven accessibility solution for individuals with disabilities.</p>
+<div class="links"><a class="btn" href="detail.html?id=accessbot">Know More</a></div>
+</div>
+<div class="card">
+<h3>9. Security Key Youth</h3>
+<p class="meta"><b>Institution:</b> Sanskriti University | <b>Location:</b> Mathura, Uttar Pradesh</p>
+<p class="desc">Personal safety-focused solution for the younger population.</p>
+<div class="links"><a class="btn" href="detail.html?id=securityyouth">Know More</a></div>
+</div>
+<div class="card">
+<h3>10. SilentBridge</h3>
+<p class="meta"><b>Institution:</b> National Institute of Technology Tiruchirappalli | <b>Location:</b> Tiruchirappalli, Tamil Nadu</p>
+<p class="desc">Real-time AI translation between speech and sign language.</p>
+<div class="links"><a class="btn" href="detail.html?id=silentbridge">Know More</a></div>
+</div>
+<div class="card">
+<h3>11. Nirbhay</h3>
+<p class="meta"><b>Institution:</b> Siliguri Institute of Technology | <b>Location:</b> Siliguri, West Bengal</p>
+<p class="desc">Personal security platform with emergency tracking for women.</p>
+<div class="links"><a class="btn" href="detail.html?id=nirbhay">Know More</a></div>
+</div>
+<div class="card">
+<h3>12. SUDARSHAN</h3>
+<p class="meta"><b>Institution:</b> Chandigarh University | <b>Location:</b> Mohali, Punjab</p>
+<p class="desc">Safety device for immediate assistance and alerts during emergencies.</p>
+<div class="links"><a class="btn" href="detail.html?id=sudarshan">Know More</a></div>
+</div>
+</div>
+
+<h2 id="gov">Governance &amp; Partnerships</h2>
+<div class="grid">
+<div class="card">
+<h3>1. Trustlens</h3>
+<p class="meta"><b>Institution:</b> NDMVP Samaj's Karmaveer Adv. Baburao Ganpatrao Thakare College of Engineering | <b>Location:</b> Nashik, Maharashtra</p>
+<p class="desc">Improves transparency and accountability in governance systems.</p>
+<div class="links"><a class="btn" href="detail.html?id=trustlens">Know More</a></div>
+</div>
+<div class="card">
+<h3>2. Solar AI CCTV</h3>
+<p class="meta"><b>Institution:</b> KSR Rangasamy College of Technology | <b>Location:</b> Tiruchengode, Tamil Nadu</p>
+<p class="desc">Sustainable and autonomous surveillance solution using AI.</p>
+<div class="links"><a class="btn" href="detail.html?id=solarcctv">Know More</a></div>
+</div>
+<div class="card">
+<h3>3. Disaster Drone</h3>
+<p class="meta"><b>Institution:</b> KSR Rangasamy College of Technology | <b>Location:</b> Tiruchengode, Tamil Nadu</p>
+<p class="desc">Enables delivery of aid and monitoring in inaccessible remote areas.</p>
+<div class="links"><a class="btn" href="detail.html?id=disasterdrone">Know More</a></div>
+</div>
+<div class="card">
+<h3>4. Gramin Suraksha</h3>
+<p class="meta"><b>Institution:</b> KSR Rangasamy College of Technology | <b>Location:</b> Tiruchengode, Tamil Nadu</p>
+<p class="desc">Rural safety and governance monitoring for villages.</p>
+<div class="links"><a class="btn" href="detail.html?id=graminsuraksha">Know More</a></div>
+</div>
+<div class="card">
+<h3>5. AuditEase</h3>
+<p class="meta"><b>Institution:</b> Not Specified | <b>Location:</b> India</p>
+<p class="desc">Simplifies auditing processes and ensures financial compliance.</p>
+<div class="links"><a class="btn" href="detail.html?id=auditease">Know More</a></div>
+</div>
+<div class="card">
+<h3>6. Proofy.AI</h3>
+<p class="meta"><b>Institution:</b> VIT AP University | <b>Location:</b> Amaravati, Andhra Pradesh</p>
+<p class="desc">Detects misinformation and validates digital content for reliability.</p>
+<div class="links"><a class="btn" href="detail.html?id=proofyai">Know More</a></div>
+</div>
+<div class="card">
+<h3>7. Nagarsetu</h3>
+<p class="meta"><b>Institution:</b> University of Allahabad | <b>Location:</b> Prayagraj, Uttar Pradesh</p>
+<p class="desc">Platforms for communication and grievance redressal in cities.</p>
+<div class="links"><a class="btn" href="detail.html?id=nagarsetu">Know More</a></div>
+</div>
+<div class="card">
+<h3>8. GramSetu</h3>
+<p class="meta"><b>Institution:</b> NRI Institute of Technology | <b>Location:</b> Vijayawada, Andhra Pradesh</p>
+<p class="desc">Bridges gaps between rural communities and digital services.</p>
+<div class="links"><a class="btn" href="detail.html?id=gramsetu">Know More</a></div>
+</div>
+<div class="card">
+<h3>9. Gram Meter</h3>
+<p class="meta"><b>Institution:</b> Nirma University | <b>Location:</b> Ahmedabad, Gujarat</p>
+<p class="desc">Digital energy management for rural electricity tracking.</p>
+<div class="links"><a class="btn" href="detail.html?id=grammeter">Know More</a></div>
+</div>
+<div class="card">
+<h3>10. Damage Detection Drone</h3>
+<p class="meta"><b>Institution:</b> IILM University | <b>Location:</b> Gurugram, Haryana</p>
+<p class="desc">Structural/environmental damage detection for infrastructure monitoring.</p>
+<div class="links"><a class="btn" href="detail.html?id=damagedrone">Know More</a></div>
+</div>
+<div class="card">
+<h3>11. Scam Bait AI</h3>
+<p class="meta"><b>Institution:</b> Vivekananda Institute of Professional Studies | <b>Location:</b> New Delhi</p>
+<p class="desc">Identifies fraudulent activities to protect users from digital threats.</p>
+<div class="links"><a class="btn" href="detail.html?id=scambait">Know More</a></div>
+</div>
+<div class="card">
+<h3>12. FoodShare</h3>
+<p class="meta"><b>Institution:</b> Not Specified | <b>Location:</b> India</p>
+<p class="desc">Reduces wastage by connecting food donors with recipients.</p>
+<div class="links"><a class="btn" href="detail.html?id=foodshare">Know More</a></div>
+</div>
+<div class="card">
+<h3>13. MediTatva</h3>
+<p class="meta"><b>Institution:</b> Chandigarh University | <b>Location:</b> Mohali, Punjab</p>
+<p class="desc">Digital health governance to streamline medical delivery.</p>
+<div class="links"><a class="btn" href="detail.html?id=meditatva">Know More</a></div>
+</div>
+</div>
+
+<h2 id="health">Health &amp; Nutrition</h2>
+<div class="grid">
+<div class="card">
+<h3>1. Health Assist AI</h3>
+<p class="meta"><b>Institution:</b> Kakinada Institute of Engineering and Technology | <b>Location:</b> Kakinada, Andhra Pradesh</p>
+<p class="desc">AI assistance for symptom assessment in rural India.</p>
+<div class="links"><a class="btn" href="detail.html?id=healthassist">Know More</a></div>
+</div>
+<div class="card">
+<h3>2. JARVIS AI</h3>
+<p class="meta"><b>Institution:</b> KSR Rangasamy College of Technology | <b>Location:</b> Tiruchengode, Tamil Nadu</p>
+<p class="desc">Digital assistant supporting healthcare efficiency.</p>
+<div class="links"><a class="btn" href="detail.html?id=jarvis">Know More</a></div>
+</div>
+<div class="card">
+<h3>3. IoT Water Monitor</h3>
+<p class="meta"><b>Institution:</b> KSR Rangasamy College of Technology | <b>Location:</b> Tiruchengode, Tamil Nadu</p>
+<p class="desc">Real-time drinking water quality monitoring via IoT.</p>
+<div class="links"><a class="btn" href="detail.html?id=watermonitor">Know More</a></div>
+</div>
+<div class="card">
+<h3>4. AyurSutra</h3>
+<p class="meta"><b>Institution:</b> KSR Rangasamy College of Technology | <b>Location:</b> Tiruchengode, Tamil Nadu</p>
+<p class="desc">Management platform for Ayurvedic treatments and scheduling.</p>
+<div class="links"><a class="btn" href="detail.html?id=ayursutra">Know More</a></div>
+</div>
+<div class="card">
+<h3>5. Ayurvedic Dietician</h3>
+<p class="meta"><b>Institution:</b> Not Specified | <b>Location:</b> India</p>
+<p class="desc">Cloud solution to manage patient data and personalized plans.</p>
+<div class="links"><a class="btn" href="detail.html?id=ayurvedicdiet">Know More</a></div>
+</div>
+<div class="card">
+<h3>6. PRANAVA AI</h3>
+<p class="meta"><b>Institution:</b> KSR Rangasamy College of Technology | <b>Location:</b> Tiruchengode, Tamil Nadu</p>
+<p class="desc">Holistic wellness insights for fitness and mental health.</p>
+<div class="links"><a class="btn" href="detail.html?id=pranava">Know More</a></div>
+</div>
+<div class="card">
+<h3>7. LonelyLess</h3>
+<p class="meta"><b>Institution:</b> KSR Rangasamy College of Technology | <b>Location:</b> Tiruchengode, Tamil Nadu</p>
+<p class="desc">AI-powered mental wellness companion.</p>
+<div class="links"><a class="btn" href="detail.html?id=lonelyless">Know More</a></div>
+</div>
+<div class="card">
+<h3>8. Aarogya Swarm</h3>
+<p class="meta"><b>Institution:</b> Dwarkadas J. Sanghvi College of Engineering | <b>Location:</b> Mumbai, Maharashtra</p>
+<p class="desc">Collaborative digital tools to connect healthcare stakeholders.</p>
+<div class="links"><a class="btn" href="detail.html?id=aarogyaswarm">Know More</a></div>
+</div>
+<div class="card">
+<h3>9. RaktaNet</h3>
+<p class="meta"><b>Institution:</b> VIT Bhopal University | <b>Location:</b> Bhopal, Madhya Pradesh</p>
+<p class="desc">Streamlines blood donation and distribution between donors and recipients.</p>
+<div class="links"><a class="btn" href="detail.html?id=raktanet">Know More</a></div>
+</div>
+<div class="card">
+<h3>10. Checkfirst</h3>
+<p class="meta"><b>Institution:</b> SRM University | <b>Location:</b> Amaravati, Andhra Pradesh</p>
+<p class="desc">Preventive healthcare platform for early diagnosis and awareness.</p>
+<div class="links"><a class="btn" href="detail.html?id=checkfirst">Know More</a></div>
+</div>
+<div class="card">
+<h3>11. MedAudit AI</h3>
+<p class="meta"><b>Institution:</b> Amrita Vishwa Vidyapeetham | <b>Location:</b> Coimbatore, Tamil Nadu</p>
+<p class="desc">Analytics platform to track inefficiencies in medical systems.</p>
+<div class="links"><a class="btn" href="detail.html?id=medaudit">Know More</a></div>
+</div>
+<div class="card">
+<h3>12. Neuro-Vibe</h3>
+<p class="meta"><b>Institution:</b> Coimbatore Institute of Technology | <b>Location:</b> Coimbatore, Tamil Nadu</p>
+<p class="desc">Mental health well-being monitoring and stress insights.</p>
+<div class="links"><a class="btn" href="detail.html?id=neurovibe">Know More</a></div>
+</div>
+<div class="card">
+<h3>13. DocMate</h3>
+<p class="meta"><b>Institution:</b> Sanskriti University | <b>Location:</b> Mathura, Uttar Pradesh</p>
+<p class="desc">Comprehensive ecosystem to integrate unified healthcare services.</p>
+<div class="links"><a class="btn" href="detail.html?id=docmate">Know More</a></div>
+</div>
+<div class="card">
+<h3>14. Doc Agent</h3>
+<p class="meta"><b>Institution:</b> Indraprastha Institute of Information Technology Delhi | <b>Location:</b> New Delhi</p>
+<p class="desc">Proactive AI assistant for healthcare-related task performance.</p>
+<div class="links"><a class="btn" href="detail.html?id=docagent">Know More</a></div>
+</div>
+<div class="card">
+<h3>15. MindGuard AI</h3>
+<p class="meta"><b>Institution:</b> Sir M. Visvesvaraya Institute of Technology | <b>Location:</b> Bengaluru, Karnataka</p>
+<p class="desc">Tracks emotional well-being to prevent professional burnout.</p>
+<div class="links"><a class="btn" href="detail.html?id=mindguard">Know More</a></div>
+</div>
+<div class="card">
+<h3>16. Ydhya</h3>
+<p class="meta"><b>Institution:</b> National Institute of Technology Tiruchirappalli | <b>Location:</b> Tiruchengode, Tamil Nadu</p>
+<p class="desc">Technology to enhance healthcare delivery and patient engagement.</p>
+<div class="links"><a class="btn" href="detail.html?id=ydhya">Know More</a></div>
+</div>
+<div class="card">
+<h3>17. Auravixia</h3>
+<p class="meta"><b>Institution:</b> Not Specified | <b>Location:</b> India</p>
+<p class="desc">VR wellness experience using sound and light for relaxation.</p>
+<div class="links"><a class="btn" href="detail.html?id=auravixia">Know More</a></div>
+</div>
+<div class="card">
+<h3>18. SparshCare AI</h3>
+<p class="meta"><b>Institution:</b> Chandigarh University | <b>Location:</b> Mohali, Punjab</p>
+<p class="desc">AI platform to guide patients and improve accessibility of care.</p>
+<div class="links"><a class="btn" href="detail.html?id=sparshcare">Know More</a></div>
+</div>
+</div>
+
+<h2 id="live">Livelihood &amp; Economic Development</h2>
+<div class="grid">
+<div class="card">
+<h3>1. GigCredit</h3>
+<p class="meta"><b>Institution:</b> Chennai Institute of Technology | <b>Location:</b> Chennai, Tamil Nadu</p>
+<p class="desc">Privacy-first credit scoring system on-device for gig workers.</p>
+<div class="links"><a class="btn" href="detail.html?id=gigcredit">Know More</a></div>
+</div>
+<div class="card">
+<h3>2. Cattlesight</h3>
+<p class="meta"><b>Institution:</b> KSR Rangasamy College of Technology | <b>Location:</b> Tiruchengode, Tamil Nadu</p>
+<p class="desc">Livestock platform aimed at improving cattle management.</p>
+<div class="links"><a class="btn" href="detail.html?id=cattlesight">Know More</a></div>
+</div>
+<div class="card">
+<h3>3. DRGS Rescue Drone</h3>
+<p class="meta"><b>Institution:</b> KSR Rangasamy College of Technology | <b>Location:</b> Tiruchengode, Tamil Nadu</p>
+<p class="desc">Drone-based system to assist in emergency rescue guidance.</p>
+<div class="links"><a class="btn" href="detail.html?id=drgsdrone">Know More</a></div>
+</div>
+<div class="card">
+<h3>4. Samudra Setu</h3>
+<p class="meta"><b>Institution:</b> KSR Rangasamy College of Technology | <b>Location:</b> Tiruchengode, Tamil Nadu</p>
+<p class="desc">Economic connectivity platform for coastal and trade-related contexts.</p>
+<div class="links"><a class="btn" href="detail.html?id=samudrasetu">Know More</a></div>
+</div>
+<div class="card">
+<h3>5. Public Transport Tracking</h3>
+<p class="meta"><b>Institution:</b> Not Specified | <b>Location:</b> India</p>
+<p class="desc">Real-time tracking for public transport in small cities.</p>
+<div class="links"><a class="btn" href="detail.html?id=publictransport">Know More</a></div>
+</div>
+<div class="card">
+<h3>6. SafeFlow AI Traffic</h3>
+<p class="meta"><b>Institution:</b> KSR Rangasamy College of Technology | <b>Location:</b> Tiruchengode, Tamil Nadu</p>
+<p class="desc">Optimizes signal timings to reduce congestion and improve efficiency.</p>
+<div class="links"><a class="btn" href="detail.html?id=safeflow">Know More</a></div>
+</div>
+<div class="card">
+<h3>7. Smart Tourist Safety</h3>
+<p class="meta"><b>Institution:</b> KSR Rangasamy College of Technology | <b>Location:</b> Tiruchengode, Tamil Nadu</p>
+<p class="desc">AI-based monitoring for traveler security in tourist zones.</p>
+<div class="links"><a class="btn" href="detail.html?id=touristsafety">Know More</a></div>
+</div>
+<div class="card">
+<h3>8. Dynamic Inventory Management</h3>
+<p class="meta"><b>Institution:</b> Indian Institute of Information Technology | <b>Location:</b> Naya Raipur, Chhattisgarh</p>
+<p class="desc">Optimizes stock tracking and reduces waste in supply chains.</p>
+<div class="links"><a class="btn" href="detail.html?id=inventoryman">Know More</a></div>
+</div>
+<div class="card">
+<h3>9. CraftConnect</h3>
+<p class="meta"><b>Institution:</b> ITM University | <b>Location:</b> Gwalior, Madhya Pradesh</p>
+<p class="desc">Digital marketplace connecting artisans directly with buyers.</p>
+<div class="links"><a class="btn" href="detail.html?id=craftconnect">Know More</a></div>
+</div>
+<div class="card">
+<h3>10. AUMSSIAN Defender</h3>
+<p class="meta"><b>Institution:</b> Not Specified | <b>Location:</b> India</p>
+<p class="desc">Cybersecurity solution to protect systems from DDoS attacks.</p>
+<div class="links"><a class="btn" href="detail.html?id=aumssian">Know More</a></div>
+</div>
+<div class="card">
+<h3>11. CrediLume</h3>
+<p class="meta"><b>Institution:</b> KIET Group of Institutions | <b>Location:</b> Ghaziabad, Uttar Pradesh</p>
+<p class="desc">Fintech platform aimed at improving access to credit services.</p>
+<div class="links"><a class="btn" href="detail.html?id=credilume">Know More</a></div>
+</div>
+<div class="card">
+<h3>12. ARIE Engine</h3>
+<p class="meta"><b>Institution:</b> Maharaja Agrasen Institute of Technology | <b>Location:</b> New Delhi</p>
+<p class="desc">Adaptive engine designed to assess performance across domains.</p>
+<div class="links"><a class="btn" href="detail.html?id=arieengine">Know More</a></div>
+</div>
+<div class="card">
+<h3>13. Vikasss</h3>
+<p class="meta"><b>Institution:</b> St. Andrews Institute of Technology and Management &amp; Guru Tegh Bahadur 4th Centenary Engineering College | <b>Location:</b> New Delhi</p>
+<p class="desc">AI-powered logistics system to help farmers access market opportunities.</p>
+<div class="links"><a class="btn" href="detail.html?id=vikasss">Know More</a></div>
+</div>
+</div>
+</div>
+
+<footer>
+<p>© 2026 NSCIF Project Compilation Hub</p>
+</footer>
+</body>
+</html>

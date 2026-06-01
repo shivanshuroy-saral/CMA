@@ -1,0 +1,1264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title id="page-title">Project Deep-Dive Analysis</title>
+<style>
+:root {
+    --primary: #1a2a6c;
+    --secondary: #b21f1f;
+    --accent: #27ae60;
+    --bg: #f4f7f6;
+    --card-bg: #ffffff;
+}
+body{
+    margin:0;
+    font-family: 'Segoe UI', sans-serif;
+    background:var(--bg);
+    color:#333;
+    line-height:1.7;
+}
+header{
+    background:linear-gradient(135deg,var(--primary),var(--secondary));
+    color:white;
+    padding:50px 20px;
+    text-align:center;
+}
+.container{
+    max-width:1000px;
+    margin:auto;
+    padding:30px 20px;
+}
+.card{
+    background:var(--card-bg);
+    border-radius:12px;
+    padding:30px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.08);
+    margin-bottom:25px;
+}
+h2{
+    color:var(--primary);
+    border-left:5px solid var(--accent);
+    padding-left:12px;
+    margin-top: 0;
+}
+.tag{
+    display:inline-block;
+    background:#eef6ff;
+    color:var(--primary);
+    padding:6px 12px;
+    border-radius:20px;
+    margin:4px;
+    font-size:14px;
+    font-weight: 500;
+}
+.btn{
+    display:inline-block;
+    background:#3498db;
+    color:white;
+    padding:12px 20px;
+    text-decoration:none;
+    border-radius:8px;
+    margin-top:10px;
+    font-weight: bold;
+}
+.back-btn{
+    background:#555;
+    margin-top: 20px;
+}
+</style>
+</head>
+<body>
+<header>
+    <h1 id="header-title">Loading Solution Profile...</h1>
+    <p id="header-subtitle">Validating secure database records...</p>
+</header>
+<div class="container">
+    <div class="card">
+        <h2>Project Overview</h2>
+        <p id="p-overview">Loading structural details...</p>
+    </div>
+    <div class="card">
+        <h2>Problem Statement</h2>
+        <p id="p-problem">Analyzing sector-specific core issues...</p>
+    </div>
+    <div class="card">
+        <h2>Our Solution</h2>
+        <p id="p-solution">Deploying algorithmic optimization steps...</p>
+    </div>
+    <div class="card">
+        <h2>Key Features</h2>
+        <ul id="p-features"></ul>
+    </div>
+    <div class="card">
+        <h2>Target Beneficiaries</h2>
+        <div id="p-beneficiaries"></div>
+    </div>
+    <div class="card">
+        <h2>Impact Potential</h2>
+        <ul id="p-impact"></ul>
+    </div>
+    <div class="card">
+        <h2>UN Sustainable Development Goals</h2>
+        <div id="p-sdgs"></div>
+    </div>
+    <div class="card">
+        <h2>Team Information</h2>
+        <p>
+            Institution: <span id="p-inst">-</span><br>
+            Location: <span id="p-loc">-</span>
+        </p>
+    </div>
+    <div class="card" id="demo-card" style="display:none;">
+        <h2>Prototype & Demo</h2>
+        <a id="p-url" href="#" target="_blank" class="btn">Open Prototype</a>
+    </div>
+    <a href="index.html" class="btn back-btn">← Back to Initiative Gallery</a>
+</div>
+<script>
+    const database = {
+        "farmpulse": {
+            title: "FarmPulse AI",
+            subtitle: "AI-Powered Early Crop Stress Detection System",
+            overview: "FarmPulse AI is an intelligent agricultural support platform that helps farmers identify crop stress early by analyzing environmental and crop-related indicators.",
+            problem: "Farmers often struggle to detect crop stress caused by pests, nutrient deficiencies, and water shortages until significant damage has already occurred.",
+            solution: "FarmPulse AI provides real-time monitoring and predictive insights using computer vision models, helping farmers take preventive action before crop damage escalates.",
+            features: ["AI-powered crop stress detection", "Pest outbreak prediction", "Water management insights", "Nutrient deficiency alerts", "Actionable recommendations"],
+            beneficiaries: ["Small Farmers", "Agricultural Cooperatives", "Rural Communities", "Extension Workers"],
+            impact: ["Reduce severe seasonal crop losses", "Improve localized per-acre productivity", "Support climate resilience in arid belts", "Increase household farmer income"],
+            sdgs: ["SDG 2 - Zero Hunger", "SDG 13 - Climate Action", "SDG 15 - Life on Land"],
+            inst: "Netaji Subhas University of Technology", loc: "New Delhi", url: "https://farm-pulse-eight.vercel.app/"
+        },
+        "climatedisaster": {
+            title: "Climate Disaster Response",
+            subtitle: "Real-Time Emergency Logistics Framework",
+            overview: "An emergency telemetry pipeline engineered to manage real-time data flow during extreme weather fluctuations and sudden catastrophic flooding conditions.",
+            problem: "Rescue operations face communication breakdowns and chaotic logistics lines during major floods and cyclones due to outdated spatial data formats.",
+            solution: "The streaming telemetry system analyzes upcoming meteorological updates to structure supply storage zones and deployment steps map-matched down to village coordinates.",
+            features: ["High-speed streaming data processing", "Predictive route blockage analysis", "Village-level disaster mapping", "Emergency coordination panel"],
+            beneficiaries: ["Disaster Relief Teams", "Local Field Administrations", "Vulnerable Coastal Inhabitants"],
+            impact: ["Accelerate life-saving supply drops", "Minimize processing delays in logistics lines", "Provide clean spatial information loops"],
+            sdgs: ["SDG 11 - Sustainable Cities", "SDG 13 - Climate Action"],
+            inst: "Regional College of Management", loc: "Bhubaneswar, Odisha", url: "https://farm-pulse-eight.vercel.app/"
+        },
+        "agrowise": {
+            title: "AgroWise",
+            subtitle: "Smart Agriculture Platform for Resource Optimization",
+            overview: "AgroWise deploys automated internet-of-things monitoring meshes to read direct ground properties and help farmers handle watering runs smoothly.",
+            problem: "Uncontrolled irrigation routines lead to massive freshwater waste and chemical soil washouts across agricultural belts.",
+            solution: "The software pairs sensor logs with upcoming atmospheric predictions to manage precision water delivery lines automatically.",
+            features: ["Volumetric moisture logging", "Automated control loop signals", "Historical run dashboarding", "Weather correlation matching"],
+            beneficiaries: ["Commercial Growers", "Dryland Agricultural Sectors", "Water Conservation Boards"],
+            impact: ["Conserve regional freshwater reserves", "Eliminate nutrient leaching issues", "Lower structural fuel expenses on pumps"],
+            sdgs: ["SDG 6 - Clean Water", "SDG 12 - Responsible Consumption"],
+            inst: "Indian Institute of Technology Kharagpur", loc: "Kharagpur, West Bengal", url: "https://dist-bice-five-84.vercel.app/"
+        },
+        "sularapp": {
+            title: "Sular App",
+            subtitle: "Digital Environmental Engagement Program",
+            overview: "A lightweight mobile application driving verified household carbon monitoring through interactive, neighborhood-focused challenges.",
+            problem: "Urban populations frequently lack clear, metric-driven methods to measure how small daily choices accumulate into structural carbon loads.",
+            solution: "Sular transforms resource optimization into interactive routines, tracking transport emissions and domestic power variations cleanly.",
+            features: ["Personal footprint calculation", "Neighborhood challenge matrices", "Verified habit logging tools", "Community metric visualization"],
+            beneficiaries: ["Urban Domestic Groups", "Academic Clean-Tech Clubs", "Local Waste Councils"],
+            impact: ["Cultivate persistent sorting and saving habits", "Track measurable household carbon cuts", "Gamify green neighborhood participation"],
+            sdgs: ["SDG 11 - Sustainable Cities", "SDG 12 - Responsible Consumption"],
+            inst: "KSR Rangasamy College of Technology", loc: "Tiruchengode, Tamil Nadu", url: "https://sular-app.vercel.app/"
+        },
+        "ecotrace": {
+            title: "EcoTrace AI",
+            subtitle: "Computer Vision Canopy Assessment Engine",
+            overview: "EcoTrace AI processes high-resolution satellite imagery patterns to detect subtle boundary reductions across sensitive forestry lines.",
+            problem: "Illegal environmental encroachment and canopy degradation often go completely unnoticed until major woodland zones disappear.",
+            solution: "The system runs background anomalies classification algorithms to catch minor tree losses and alert forestry protection networks instantly.",
+            features: ["Automated spatial change detection", "Forest border decay alerts", "Historical green-index charting", "Vegetation classification libraries"],
+            beneficiaries: ["Forest Management Agencies", "Ecological Research Groups", "Wildlife Border Defenses"],
+            impact: ["Provide early warning signals for tree losses", "Protect protected reserve boundaries", "Simplify wide-area field tracking burdens"],
+            sdgs: ["SDG 13 - Climate Action", "SDG 15 - Life on Land"],
+            inst: "KSR Rangasamy College of Technology", loc: "Tiruchengode, Tamil Nadu", url: "https://github.com/ashafarina/Shola-restore"
+        },
+        "agriorbit": {
+            title: "AGRIORBIT",
+            subtitle: "Unified Farm Management Ledger",
+            overview: "AGRIORBIT brings local farm yield monitoring, active field storage status, and logistical paths inside a single, easy-to-use control interface.",
+            problem: "Small-tier growers stay separated from real trading channels, letting middle-tier networks capture most of the crop values.",
+            solution: "The system tracks active storage metrics to give producers precise, verifiable records when engaging with commercial trading routes.",
+            features: ["Direct field asset logs", "Storage capacity alerts", "Logistical pathway coordination", "Direct trading data entries"],
+            beneficiaries: ["Small-Holder Field Managers", "Regional Warehousing Systems", "Independent Logistics Drivers"],
+            impact: ["Bypass predatory marketing structures", "Ensure reliable storage monitoring lines", "Boost direct trade profits for families"],
+            sdgs: ["SDG 2 - Zero Hunger", "SDG 8 - Decent Work"],
+            inst: "KSR Rangasamy College of Technology", loc: "Tiruchengode, Tamil Nadu", url: "https://farmer-azure.vercel.app/"
+        },
+        "smartfarm": {
+            title: "Smart Farm Decision Support",
+            subtitle: "Predictive Local Field Calculator",
+            overview: "An offline-friendly field planning utility analyzing historical weather values to establish optimization steps for sowing timelines.",
+            problem: "Shifting seasonal monsoon steps confuse historical planting dates, leading to premature seed failures in rain-fed regions.",
+            solution: "The system evaluates deep meteorological curves to output adaptive calendars that match current moisture variations safely.",
+            features: ["Dynamic sowing window updates", "Offline parameter calculations", "Local seed variation selectors", "Risk modeling indicators"],
+            beneficiaries: ["Rain-Fed Agricultural Belts", "Small Fertilizer Distributorships", "Rural Banking Planners"],
+            impact: ["Prevent early seed re-sowing costs", "Stabilize crop germination stability profiles", "Ensure dependable harvest windows"],
+            sdgs: ["SDG 1 - No Poverty", "SDG 2 - Zero Hunger"],
+            inst: "KSR Rangasamy College of Technology", loc: "Tiruchengode, Tamil Nadu", url: "http://agro.inaiyam.org.in"
+        },
+        "flowchart": {
+            title: "Flowchart",
+            subtitle: "System Process Efficiency Engine",
+            overview: "A modular, visual workflow builder tracking logistical handoffs to isolate processing bottlenecks across multi-tier setups.",
+            problem: "Complex distribution configurations accumulate heavy coordination friction because tracking links remain unmonitored.",
+            solution: "The architecture maps data dependencies into clear flow chains, tracking systemic idle states across active nodes automatically.",
+            features: ["Visual block layout builders", "Bottleneck calculation scripts", " Handoff delay alerts", "System status export nodes"],
+            beneficiaries: ["Agri-Logistics Organizations", "Cooperative Field Planners", "System Process Operators"],
+            impact: ["Cut down resource handoff latency", "Eliminate structural systemic delays", "Streamline multi-tier coordination lines"],
+            sdgs: ["SDG 9 - Industry & Innovation", "SDG 12 - Responsible Consumption"],
+            inst: "KSR Rangasamy College of Technology", loc: "Tiruchengode, Tamil Nadu", url: "https://float-chat-frontend-delta.vercel.app/"
+        },
+        "securedata": {
+            title: "Secure Data Wiping",
+            subtitle: "Cryptographic E-Waste Decontamination Tool",
+            overview: "A specialized data sanitation utility deploying hard cryptographic block overwrites to clean hardware devices prior to recycling.",
+            problem: "Discarded enterprise assets spill consumer telemetry pools because standard deletion parameters leave root sectors readable.",
+            solution: "Secure Data Wiping implements structural block cycles, validating compliance metrics to feed hardware cleanly back to circular assembly loops.",
+            features: ["Multi-pass sanitization blocks", "Cryptographic sector validation", "Compliance document outputs", "Low-level hardware access links"],
+            beneficiaries: ["Electronic Asset Refurbishers", "Corporate Technology Managers", "Circular Material Handlers"],
+            impact: ["Eliminate toxic consumer data breaches", "Keep safe computing parts out of dumps", "Accelerate secure electronic reuse channels"],
+            sdgs: ["SDG 12 - Responsible Consumption", "SDG 13 - Climate Action"],
+            inst: "KSR Rangasamy College of Technology", loc: "Tiruchengode, Tamil Nadu", url: "https://youtu.be/VFPW1uC3n30"
+        },
+        "cattlenes": {
+            title: "Cattlenes",
+            subtitle: "Livestock Behavioral Telemetry Pipeline",
+            overview: "Cattlenes integrates wearable physical trackers with cloud logging dashboards to watch health indicators across farm animals.",
+            problem: "Incubating herd infections escape early visual detection, resulting in costly veterinary crises and production shutdowns.",
+            solution: "The tracker processes behavioral deviations like resting variations and movement changes to flag signs of sickness early.",
+            features: ["Kinetic movement calculation", "Early fever warning indicators", "Pasture boundary alerts", "Herd health trend charts"],
+            beneficiaries: ["Dairy Farm Operations", "Organic Livestock Managers", "Veterinary Support Networks"],
+            impact: ["Isolate symptomatic animals before spread", "Lower therapeutic pharmaceutical expenses", "Preserve daily output consistency"],
+            sdgs: ["SDG 2 - Zero Hunger", "SDG 15 - Life on Land"],
+            inst: "KSR Rangasamy College of Technology", loc: "Tiruchengode, Tamil Nadu", url: "https://cow-scribe.lovable.app/"
+        },
+        "sustainability": {
+            title: "Sustainability Project",
+            subtitle: "Municipal Waste Lifecycle Tracker",
+            overview: "A regional educational layout designed to translate public disposal habits into structured optimization guidelines for sorting lines.",
+            problem: "Mixed household packaging contaminants disable processing machinery at recycling centers due to poor public separation.",
+            solution: "This model maps municipal collection steps, visually teaching school circles to isolate single-use items effectively.",
+            features: ["Interactive asset flow visuals", "Packaging classification tables", "Local sorting point indicators", "Resource decay trackers"],
+            beneficiaries: ["Urban School Systems", "Neighborhood Welfare Units", "Sanitation Planning Boards"],
+            impact: ["Decrease raw processing dump contamination", "Raise material reuse efficiencies locally", "Foster reliable community tracking habits"],
+            sdgs: ["SDG 11 - Sustainable Cities", "SDG 12 - Responsible Consumption"],
+            inst: "Netaji Subhas University of Technology", loc: "New Delhi", url: ""
+        },
+        "mittie": {
+            title: "MITTIE",
+            subtitle: "Direct Soil Diagnostic Analysis Hub",
+            overview: "MITTIE calculates foundational NPK chemical balances on-site, outputting customized additive guides via a simple cloud dashboard.",
+            problem: "Blind application of fertilizers alters regional pH layers, degrading soil fertility profiles across farming belts.",
+            solution: "The calculator runs chemical variance formulas to match measured parameters with target crop needs, preventing product overages.",
+            features: ["NPK metric input parsers", "Customized remediation outputs", "Historical field status logs", "Additive balance checkers"],
+            beneficiaries: ["Independent Soil Analysts", "Local Farming Clusters", "Fertilizer Cooperative Units"],
+            impact: ["Reclaim degraded cultivation fields", "Lower excessive input costs for families", "Protect local groundwater tables from runoff"],
+            sdgs: ["SDG 2 - Zero Hunger", "SDG 15 - Life on Land"],
+            inst: "University of Engineering and Management", loc: "Kolkata, West Bengal", url: "https://kpay-theta.vercel.app/"
+        },
+        "wildlifedrone": {
+            title: "Wildlife Monitoring Drone",
+            subtitle: "Autonomous Edge-Computing Protection Array",
+            overview: "An autonomous aerial observation platform deploying local visual classification assets to locate wildlife and note poaching dangers.",
+            problem: "Protected boundaries suffer from tracking gaps because foot patrols cannot cover dense forest terrains continuously.",
+            solution: "The drone network flies programmed path loops, analyzing infrared profiles locally to alert ranger huts of unexpected intruders.",
+            features: ["On-device object recognition", "Thermal infrared vision arrays", "Encrypted coordinate relay nodes", "Silent brushless flight profiles"],
+            beneficiaries: ["Forest Rangers", "Endangered Species Researchers", "Nature Reserve Administrators"],
+            impact: ["Stop illegal logging and poaching runs", "Monitor migrations without human presence", "Provide reliable field tracking coverage"],
+            sdgs: ["SDG 15 - Life on Land"],
+            inst: "IILM University", loc: "Gurugram, Haryana", url: "https://drive.google.com/open?id=1Up6thcXhHLsoAFjJ4ktEgtoInQP8Y7Hw"
+        },
+        "disastro": {
+            title: "Disastro",
+            subtitle: "Crisis Resource Allocation Matrix",
+            overview: "Disastro connects remote community units directly with municipal relief nodes to track vital inventories during infrastructure failures.",
+            problem: "Emergency supplies pool inefficiently at central points while edge pockets go without support due to poor coordination.",
+            solution: "The framework matches supply lists against verified localized shortages, stabilizing distribution paths during disruptions.",
+            features: ["Supply requirement matching", "Edge node communication links", "Offline inventory log templates", "Priority dispatch indicators"],
+            beneficiaries: ["Emergency Operations Units", "Community Support Circles", "Isolated Village Pockets"],
+            impact: ["Balance relief inventory spreads", "Reduce waiting times for critical items", "Support communication lines during grid drops"],
+            sdgs: ["SDG 10 - Reduced Inequalities", "SDG 11 - Sustainable Cities"],
+            inst: "Not Specified", loc: "India", url: ""
+        },
+        "bhoomitra": {
+            title: "Bhoomitra",
+            subtitle: "AI-Enabled Composting Optimizer",
+            overview: "Bhoomitra watches thermal and aeration adjustments inside neighborhood processing setups to optimize organic breakdown steps.",
+            problem: "Community composting piles stall and create strong odors when moisture levels deviate from precise structural balances.",
+            solution: "The app tracks oxygen and heat data, telling local handlers exactly when to turn materials to ensure steady processing.",
+            features: ["Thermal profiling dashboards", "Moisture imbalance alerts", "Automated aeration reminders", "Stabilization stage counters"],
+            beneficiaries: ["Urban Housing Societies", "Organic Farm Suppliers", "Municipal Smart Cities"],
+            impact: ["Divert organic waste from regional dumps", "Generate high-quality local soil additives", "Eliminate odor issues in city areas"],
+            sdgs: ["SDG 11 - Sustainable Cities", "SDG 12 - Responsible Consumption"],
+            inst: "Ajay Kumar Garg Engineering College", loc: "Ghaziabad, Uttar Pradesh", url: "https://drive.google.com/drive/folders/101XvRDemwjSJsyUbpPJty_KjLC5Xx409"
+        },
+        "jalnidhi": {
+            title: "JalNidhi",
+            subtitle: "AI-Optimized Rooftop Rainwater Harvester",
+            overview: "JalNidhi automates rooftop storage valves, using weather forecasts to maximize water capture and prevent urban street flooding.",
+            problem: "Uncontrolled irrigation routines lead to massive freshwater waste and chemical soil washouts across agricultural belts.",
+            solution: "The system reads rainfall data to draw down tank reserves early, creating space to absorb heavy rain spikes safely.",
+            features: ["Forecasting data integration", "Automated valve control links", "Water level telemetry sensors", "Consumption pace calculators"],
+            beneficiaries: ["Urban Building Networks", "Groundwater Recharge Areas", "City Water Utilities"],
+            impact: ["Boost building water self-sufficiency", "Reduce clean water grid loading", "Lower local street runoff spikes during storms"],
+            sdgs: ["SDG 6 - Clean Water", "SDG 11 - Sustainable Cities"],
+            inst: "Sanskriti University", loc: "Mathura, Uttar Pradesh", url: "https://rooftop-rainwater-harvesting-ai.onrender.com"
+        },
+        "quantumx": {
+            title: "Quantum X Sustainability",
+            subtitle: "Micro-Grid Energy Balancing Tool",
+            overview: "An experimental resource balancing application checking energy generation variances across campus solar structures.",
+            problem: "Suburban engineering clusters waste solar capacities because consumption steps match poorly with peak generation times.",
+            solution: "Quantum X routes battery storage parameters dynamically to match building loads during high-demand afternoon periods.",
+            features: ["Solar generation tracking", "Building load match meters", "Battery status indicators", "Efficiency drain trackers"],
+            beneficiaries: ["Institutional Energy Managers", "Campus Grid Planners", "Alternative Power Engineers"],
+            impact: ["Lower grid reliance during high-cost peaks", "Prevent campus generation waste", "Stabilize structural battery storage life"],
+            sdgs: ["SDG 7 - Affordable & Clean Energy", "SDG 9 - Industry & Innovation"],
+            inst: "Sanskriti University", loc: "Mathura, Uttar Pradesh", url: ""
+        },
+        "ailivestock": {
+            title: "AI Livestock Monitor",
+            subtitle: "Computer Vision Cattle Health Analyser",
+            overview: "A pasture camera system running classification scripts to evaluate cattle movement and track behavioral shifts.",
+            problem: "Manual inspections miss lameness indicators in large cattle operations until physical complications alter production.",
+            solution: "The computer vision engine scores gaits automatically, alerting managers to signs of joint strain early.",
+            features: ["Gait classification scripts", "Pasture time monitors", "Resting cycle anomaly flags", "Individual identifier links"],
+            beneficiaries: ["Commercial Dairy Operators", "Large Livestock Managers", "Herd Health Practitioners"],
+            impact: ["Catch lameness before severe inflammation", "Maintain baseline daily milk output", "Reduce dependency on broad antibiotic lines"],
+            sdgs: ["SDG 2 - Zero Hunger", "SDG 12 - Responsible Consumption"],
+            inst: "KSR Rangasamy College of Technology", loc: "Tiruchengode, Tamil Nadu", url: "https://drive.google.com/file/d/14-6nA59Smle9-R_H8cC5KiJm_wgm_qB4/view"
+        },
+        "kissanpay": {
+            title: "KISSAN PAY",
+            subtitle: "Offline Agricultural Transaction Portal",
+            overview: "KISSAN PAY uses encrypted text parameters to process safe trade payments between farmers and local buyers without internet connections.",
+            problem: "Frequent data drops in rural areas halt transaction apps, forcing extended payment delays at wholesale yards.",
+            solution: "The platform runs verification steps over standard cellular channels, settling trade records securely through direct carrier networks.",
+            features: ["Offline text transaction modes", "Encrypted transaction strings", "Direct market ledger syncing", "Low-tier phone support layout"],
+            beneficiaries: ["Rural Grain Wholesalers", "Independent Crop Producers", "Local Freight Operators"],
+            impact: ["Secure direct trade sales during network drops", "Eliminate risky cash carries at rural markets", "Build clear accounting records for financing"],
+            sdgs: ["SDG 1 - No Poverty", "SDG 8 - Decent Work"],
+            inst: "Visvesvaraya Institute of Technology", loc: "Warangal, Telangana", url: "https://youtu.be/xAx87sCEcS0"
+        },
+        "circuit25": {
+            title: "Circuit 25 Innovation",
+            subtitle: "Sensor Node Lifecycle Evaluator",
+            overview: "A protective testing utility evaluating active hardware decay metrics across field sensor networks in high-heat zones.",
+            problem: "Agricultural IoT nodes fail unexpectedly because moisture and high heat degrade sensor links without warming.",
+            solution: "The software tracks electrical resistance anomalies, alerting field teams to swap failing sensors before data drops happen.",
+            features: ["Resistance anomaly tracking", "Sensor node decay indicators", "Battery drainage models", "Field hardware health charts"],
+            beneficiaries: ["Field Hardware Deployers", "Precision Agri-Tech Planners", "IoT Maintenance Crews"],
+            impact: ["Eliminate unexpected data collection gaps", "Lower field node maintenance costs", "Extend total hardware deployment life"],
+            sdgs: ["SDG 9 - Industry & Innovation", "SDG 12 - Responsible Consumption"],
+            inst: "Dwarkadas J. Sanghvi College of Engineering", loc: "Mumbai, Maharashtra", url: "https://drive.google.com/file/d/1im2GLmRrlbwfmaD5VEpkAxn0LMEjl4iu/view"
+        },
+        "ecosort": {
+            title: "EcoSort",
+            subtitle: "Automated Conveyor Material sorter",
+            overview: "EcoSort runs high-speed object analysis software on sorting lines to classify and separate recyclable plastics using pneumatics.",
+            problem: "Manual sorting lines process waste too slowly, leading to low capture rates and high landfill volumes for mixed materials.",
+            solution: "The model runs visual classification loops, triggering precise air nozzles to sort bottles cleanly from paper streams.",
+            features: ["Real-time sorting algorithms", "Air nozzle timing controls", "Contamination rate analytics", "Material volume recorders"],
+            beneficiaries: ["Recycling Sorting Centers", "Municipal Sorting Operators", "Circular Economy Ventures"],
+            impact: ["Boost purity rates in recycled batches", "Divert tons of plastics from urban dumps", "Lower operational sorting line costs"],
+            sdgs: ["SDG 11 - Sustainable Cities", "SDG 12 - Responsible Consumption"],
+            inst: "KSR Rangasamy College of Technology", loc: "Tiruchengode, Tamil Nadu", url: "https://ecosort-one.vercel.app/"
+        },
+        "wildguard": {
+            title: "WildGuard AI",
+            subtitle: "Thermal Perimeter Conflict Buffer",
+            overview: "WildGuard runs thermal tracking tools on border nodes to locate forest wildlife and prevent crop raiding using harmless sound frequencies.",
+            problem: "Border farms lose seasonal crops to visiting elephant herds, causing dangerous encounters and financial damage.",
+            solution: "The camera sensors read thermal shapes at forest boundaries, triggering safe target audio pulses to turn animals back safely.",
+            features: ["Thermal contour matching", "Acoustic deterrent loops", "Instant team text warnings", "Activity time logs"],
+            beneficiaries: ["Forest Border Farmers", "Wildlife Control Teams", "Agricultural Risk Underwriters"],
+            impact: ["Stop seasonal crop raiding damage", "Prevent risky wildlife confrontations", "Secure small-holder farm values near parks"],
+            sdgs: ["SDG 15 - Life on Land"],
+            inst: "KSR Rangasamy College of Technology", loc: "Tiruchengode, Tamil Nadu", url: "https://ai.studio/apps/drive/1LlzbBHE-FEyK1e7M5MLY1VXWcOTiVVmv"
+        },
+        "agrokheti": {
+            title: "AgroKheti",
+            subtitle: "Voice-First Vernacular Farming Guide",
+            overview: "AgroKheti translates complex agricultural guidance into natural speech inputs, helping farmers access pest solutions in local dialers.",
+            problem: "Text-dense agricultural databases remain unusable for many older farmers who prefer spoken local languages.",
+            solution: "The app matches spoken questions to verified treatment records, reading step-by-step organic remedies aloud clearly.",
+            features: ["Vernacular speech recognition", "Text-to-speech audio responses", "Organic pest solution indexes", "Offline question cache modes"],
+            beneficiaries: ["Older Farming Operators", "Vernacular Language Belts", "Extension Support Volunteers"],
+            impact: ["Bring verified farming advice to more users", "Lower chemical misapplication damages", "Boost independent farm planning steps"],
+            sdgs: ["SDG 1 - No Poverty", "SDG 10 - Reduced Inequalities"],
+            inst: "Not Specified", loc: "India", url: "https://agrokheti.netlify.app/"
+        },
+        "kisanji": {
+            title: "KisanJi",
+            subtitle: "Local Machine Sharing Marketplace",
+            overview: "KisanJi connects local farming groups together to share high-cost tools like seed drills and harvesters during busy seasons.",
+            problem: "Small farms face deep debt cycles when buying heavy equipment that sits idle for most of the year.",
+            solution: "The app runs an on-demand rental setup, allowing machine owners to rent out idle tools to neighbors safely.",
+            features: ["Machine availability calendars", "Direct driver coordination portals", "Transparent rental pricing logs", "Tool condition verification checklists"],
+            beneficiaries: ["Small-Holder Field Units", "Local Equipment Owners", "Custom Hiring Centers"],
+            impact: ["Lower structural farm capitalization costs", "Generate alternative income for owners", "Speed up harvest operations locally"],
+            sdgs: ["SDG 2 - Zero Hunger", "SDG 8 - Decent Work"],
+            inst: "Graphic Era University", loc: "Dehradun, Uttarakhand", url: "https://kisanji-frontend.vercel.app"
+        },
+
+        // --- EDUCATION & SKILLS ---
+        "aimock": {
+            title: "AI Mock Interview",
+            subtitle: "Automated Communication Assessment Engine",
+            overview: "An interactive training layout evaluating speech performance and lexical choices to help candidates practice for corporate job entry interviews.",
+            problem: "Students from regional institutions often miss placement opportunities due to a lack of structured, regular interview practice.",
+            solution: "The framework runs speech analysis models, providing immediate feedback on pacing and presentation structure to guide independent improvement.",
+            features: ["Speech pace analysis", "Vocabulary scoring scripts", "Interactive video roleplays", "Progress dashboard links"],
+            beneficiaries: ["Regional College Grads", "Placement Support Teams", "Vocational Training Centers"],
+            impact: ["Boost corporate placement success rates", "Build professional communication confidence", "Lower personal coaching expenses"],
+            sdgs: ["SDG 4 - Quality Education", "SDG 8 - Decent Work"],
+            inst: "KSR Rangasamy College of Technology", loc: "Tiruchengode, Tamil Nadu", url: "https://drive.google.com/u/1/open?id=1wWcxHc_LKF7t7IuSoXfScba5Y7bV-EK-"
+        },
+        "sahayakai": {
+            title: "Sahayak AI",
+            subtitle: "Conversational Vernacular Study Assistant",
+            overview: "Sahayak AI reads standard textbook files and converts chapters into simple, interactive question loops inside a lightweight chat screen.",
+            problem: "Students in resource-limited schools struggle with dense study texts when teachers are unavailable to explain terms.",
+            solution: "The app answers student questions in plain language, breaking complex concepts down using everyday regional examples.",
+            features: ["Textbook content parsing", "Plain language translations", "Automated sample quiz builders", "Voice query input nodes"],
+            beneficiaries: ["Resource-Limited Schools", "Vernacular Medium Students", "After-School Study Centers"],
+            impact: ["Improve basic concept retention levels", "Support independent home study routines", "Lower textbook learning hurdles for families"],
+            sdgs: ["SDG 4 - Quality Education", "SDG 10 - Reduced Inequalities"],
+            inst: "Amrita Vishwa Vidyapeetham", loc: "Coimbatore, Tamil Nadu", url: "https://shiksha-saathi.lovable.app/"
+        },
+        "edugrant": {
+            title: "EduGrant AI",
+            subtitle: "Intelligent Scholarship Matching Index",
+            overview: "EduGrant AI evaluates candidate background details against public and private scholarship parameters to find hidden financial support avenues.",
+            problem: "Deserving students leave education early because finding matching scholarship options across disjointed portals is highly complex.",
+            solution: "The system matches background parameters against active funding databases, building direct, step-by-step application check-lists instantly.",
+            features: ["Profile criteria matching", "Consolidated grant indexing", "Application step checklists", "Deadline alert reminders"],
+            beneficiaries: ["First-Generation Students", "Financial Aid Offices", "Marginalized Academic Groups"],
+            impact: ["Connect financial aid to ideal candidates", "Lower drop-out rates due to cost issues", "Simplify complex application steps"],
+            sdgs: ["SDG 4 - Quality Education", "SDG 10 - Reduced Inequalities"],
+            inst: "MGM College", loc: "Udupi, Karnataka", url: "https://edu-sparkle-match.vercel.app/"
+        },
+        "dreamweaver": {
+            title: "Dreamweaver AI",
+            subtitle: "Vocational Path Planning Engine",
+            overview: "Dreamweaver AI maps regional industrial demand changes to suggest accurate skill upgrade tracks for vocational students.",
+            problem: "Technical training routes often guide students toward shrinking job sectors, creating local employment mismatches.",
+            solution: "The program reads manufacturing trends to recommend high-value certification pathways that guarantee industrial relevance.",
+            features: ["Industrial demand mapping", "Skill gaps calculation scripts", "Certification tracking links", "Local employment indicators"],
+            beneficiaries: ["Polytechnic Candidates", "Technical Career Advisors", "Skill Development Boards"],
+            impact: ["Align training paths with active open roles", "Reduce underemployment among technical grads", "Support localized industrial growth"],
+            sdgs: ["SDG 4 - Quality Education", "SDG 8 - Decent Work"],
+            inst: "Government Polytechnic", loc: "Rampur, Uttar Pradesh", url: ""
+        },
+        "onlearn": {
+            title: "OnLearn",
+            subtitle: "Adaptive Code Mastery Sandbox",
+            overview: "OnLearn tracks student coding assignments step-by-step, shifting code challenges dynamically based on observed logic choices.",
+            problem: "Fixed training structures leave struggling students behind while advanced learners face unengaging, repetitive assignments.",
+            solution: "The environment adjusts complexity curves dynamically, matching tasks directly to individual performance metrics.",
+            features: ["Dynamic complexity shifting", "Real-time error analysis", "Logical step tracking boards", "Targeted remedial exercises"],
+            beneficiaries: ["Computer Science Classes", "Self-Paced Bootcamps", "Engineering Instructors"],
+            impact: ["Increase foundational coding pass rates", "Maintain high student interest levels", "Provide clear skill tracking charts"],
+            sdgs: ["SDG 4 - Quality Education", "SDG 9 - Industry & Innovation"],
+            inst: "Indian Institute of Technology Roorkee", loc: "Roorkee, Uttarakhand", url: "https://onlearn.app/"
+        },
+        "memexllm": {
+            title: "MemexLLM",
+            subtitle: "Academic Research Knowledge Organizer",
+            overview: "MemexLLM builds intelligent indexing structures across unstructured text files to help laboratory groups manage project papers cleanly.",
+            problem: "Research teams duplicate experiments because finding specific past methodology notes across wide server setups is highly difficult.",
+            solution: "The search architecture charts technical connections across documents, surfacing relevant internal project files instantly.",
+            features: ["Semantic context mapping", "Methodology trend charts", "Cross-document data links", "Automated citation groupings"],
+            beneficiaries: ["University Research Labs", "Postgraduate Groups", "Academic Knowledge Managers"],
+            impact: ["Prevent accidental project duplication runs", "Accelerate literature analysis phases", "Keep institutional knowledge secure and readable"],
+            sdgs: ["SDG 9 - Industry & Innovation"],
+            inst: "Bharati Vidyapeeth's College of Engineering", loc: "New Delhi", url: ""
+        },
+        "gurug": {
+            title: "Guru-G",
+            subtitle: "Local Server Offline Lesson Cache",
+            overview: "Guru-G packs primary mathematics and language video lessons onto minimal local hardware boxes that work without active internet links.",
+            problem: "Web-dependent learning tools become unusable in remote schools where regular internet connectivity remains down.",
+            solution: "The system runs a local Wi-Fi hotspot from a small micro-computer, letting surrounding tablets access lessons cleanly offline.",
+            features: ["Local offline content hosting", "Low-power hardware profiles", "Automatic data sync steps", "Local device tracking logs"],
+            beneficiaries: ["Remote Tribal Schools", "Rural Volunteer Teachers", "Edge Infrastructure Areas"],
+            impact: ["Keep interactive study tools up during outages", "Eliminate high data costs for rural schools", "Ensure equal access to modern learning tools"],
+            sdgs: ["SDG 4 - Quality Education", "SDG 10 - Reduced Inequalities"],
+            inst: "GL Bajaj Institute of Technology and Management", loc: "Greater Noida, Uttar Pradesh", url: "https://drive.google.com/file/d/1gZBTBoVcde8uXi0t9worEfo_tx-p5Cj9/view"
+        },
+        "occulocommand": {
+            title: "OcculoCommand",
+            subtitle: "Hands-Free Assistive Student Interface",
+            overview: "OcculoCommand processes facial movement tracking via standard webcams, enabling students with physical challenges to navigate computing tasks smoothly.",
+            problem: "Standard computer labs exclude students with severe motor limitations who cannot operate keyboards or mice.",
+            solution: "The software translates precise eye gaze paths and head tilts into cursor actions, unlocking digital tool tracking fully.",
+            features: ["Visual tracking calibration tools", "Facial gesture switch maps", "Low-overhead calculation code", "Adaptive typing keyboard layouts"],
+            beneficiaries: ["Students with Physical Challenges", "Inclusive Computer Labs", "Special Education Facilities"],
+            impact: ["Unlock equal access to technical courses", "Build independent computing skills for all", "Lower the cost of specialized adaptive equipment"],
+            sdgs: ["SDG 4 - Quality Education", "SDG 10 - Reduced Inequalities"],
+            inst: "Chandigarh University", loc: "Mohali, Punjab", url: "https://occulocommand.vercel.app/"
+        },
+        "inframonitor": {
+            title: "Infrastructure Monitoring",
+            subtitle: "Institutional Server Resource Logger",
+            overview: "A lightweight technical utility monitoring device runtimes and memory bottlenecks across university computer centers.",
+            problem: "Unchecked software runs lock lab workstations during practical exams, causing disruptions and data losses.",
+            solution: "The application tracks memory patterns across lab nodes, alerting network managers before terminal freezes happen.",
+            features: ["Node memory tracking loops", "Instant system warning flags", "Automated process terminations", "System layout resource maps"],
+            beneficiaries: ["University Lab Technical Crews", "Computer Center Planners", "Network Administration Teams"],
+            impact: ["Eliminate workstation freezes during tests", "Maximize institutional hardware lifespans", "Simplify multithreaded network tracking"],
+            sdgs: ["SDG 9 - Industry & Innovation"],
+            inst: "Not Specified", loc: "India", url: "https://github.com/Aarushtech-coder"
+        },
+        "totochan": {
+            title: "TOTOCHAN",
+            subtitle: "Gamified Literacy Retention Hub",
+            overview: "TOTOCHAN adds interactive, narrative-driven achievements into foundational alphabet and writing tasks for primary students.",
+            problem: "Early primary classes face dropping retention rates when repetitive language drills make learning unengaging.",
+            solution: "The app wraps grammar and syntax tasks inside animated local folktale journeys, rewarding daily learning consistency.",
+            features: ["Folktale mission paths", "Foundational literacy check-ins", "Spoken feedback audio tracks", "Class attendance reward maps"],
+            beneficiaries: ["Primary School Classes", "Vernacular Literacy Drivers", "Early Childhood Classrooms"],
+            impact: ["Raise early language retention metrics", "Lower primary class dropout rates", "Make foundational learning fun and interactive"],
+            sdgs: ["SDG 4 - Quality Education"],
+            inst: "KSR Rangasamy College of Technology", loc: "Tiruchengode, Tamil Nadu", url: "https://github.com/Pirithivrajan/TOTOCHAN"
+        },
+
+        // --- SOCIAL INCLUSION ---
+        "livingmemory": {
+            title: "Living Memory",
+            subtitle: "AI Archival Memory Logger for Elderly Care",
+            overview: "Living Memory uses conversational voice tools to help older adults document life stories, turning memories into structured family history pages.",
+            problem: "Seniors in care frameworks face isolation and memory loss while valuable personal histories fade away without preservation.",
+            solution: "The application runs gentle, automated speech prompts, organizing unstructured stories into readable timeline chapters beautifully.",
+            features: ["Voice narrative tracking loops", "Automated family history timelines", "Cognitive memory exercise paths", "Secure family sharing portals"],
+            beneficiaries: ["Seniors in Care Frameworks", "Family Archival Historians", "Geriatric Support Groups"],
+            impact: ["Lower observed senior isolation metrics", "Preserve valuable oral histories for families", "Support cognitive activation through storytelling"],
+            sdgs: ["SDG 3 - Good Health", "SDG 10 - Reduced Inequalities"],
+            inst: "Gandhi Institute for Technological Advancement", loc: "Bhubaneswar, Odisha", url: "https://living-memory-ai-volution.vercel.app/"
+        },
+        "sentinelvision": {
+            title: "SENTINEL VISION",
+            subtitle: "Transit Safety Crowd Analytics Module",
+            overview: "Sentinel Vision reviews public transport camera feeds to identify unusual movement anomalies and flag immediate transit safety issues.",
+            problem: "Overcrowded public transit hubs miss safety emergencies because safety crews cannot watch dozens of screens manually.",
+            solution: "The system monitors pedestrian flow dynamics, alerting security teams instantly if unusual crowding patterns appear.",
+            features: ["Pedestrian flow tracking loops", "Crowding anomaly indicators", "Instant alert routing nodes", "Historical hotspot mapping"],
+            beneficiaries: ["Public Transit Commuters", "Station Security Crews", "Municipal Transport Planners"],
+            impact: ["Speed up response times during emergencies", "Improve general safety metrics across hubs", "Provide data-driven safety planning metrics"],
+            sdgs: ["SDG 5 - Gender Equality", "SDG 11 - Sustainable Cities"],
+            inst: "KSR Rangasamy College of Technology", loc: "Tiruchengode, Tamil Nadu", url: "https://national-hackthon.vercel.app/"
+        },
+        "codenetra": {
+            title: "CodeNetra-AI",
+            subtitle: "Audio-First Programming Workspace",
+            overview: "An audio-optimized programming workspace using high-speed text parsing to help visually challenged students write clean code lines independently.",
+            problem: "Standard coding platforms rely heavily on visual layouts, excluding blind students from technical software training.",
+            solution: "CodeNetra maps screen positions into non-overlapping audio alerts, letting users trace syntax errors by sound.",
+            features: ["Audio syntax error indicators", "Screen position text readers", "Voice command navigation nodes", "Tactile layout reference guides"],
+            beneficiaries: ["Visually Challenged Students", "Technical Special Educators", "Inclusive Software Academies"],
+            impact: ["Open competitive software roles to blind grads", "Eliminate costly screen reader reliance issues", "Support universal design in technical spaces"],
+            sdgs: ["SDG 4 - Quality Education", "SDG 10 - Reduced Inequalities"],
+            inst: "Baba Vishwanath College", loc: "Uttar Pradesh", url: "https://github.com/roshancodes036-sudo/CodeNetra-Flutter-AI.git"
+        },
+        "decipher": {
+            title: "Decipher.io",
+            subtitle: "Vernacular Legal Translation Middleware",
+            overview: "Decipher.io simplifies complex legal texts and welfare documentation into plain, clear summaries in regional languages.",
+            problem: "Complex legal language cuts off under-resourced women from accessing domestic protection benefits and legal aid.",
+            solution: "The program reads standard legal filings and converts paragraphs into step-by-step rights lists using local terms.",
+            features: ["Legal text simplification scripts", "Vernacular language translation nodes", "Step-by-step action trackers", "Direct legal aid contact paths"],
+            beneficiaries: ["Legal Aid Claimants", "Community Counseling Volunteers", "Women's Support Networks"],
+            impact: ["Lower systemic barriers to legal protection", "Accelerate community welfare access rates", "Empower users with clear rights data"],
+            sdgs: ["SDG 5 - Gender Equality", "SDG 16 - Peace & Justice"],
+            inst: "Indira Gandhi Delhi Technical University for Women + Delhi Technological University", loc: "New Delhi", url: ""
+        },
+        "ashaai": {
+            title: "Asha AI",
+            subtitle: "Voice-Based State Benefit Portal",
+            overview: "Asha AI brings government benefit updates directly to rural female operators using simple, natural voice tools on basic phones.",
+            problem: "Rural communities miss active welfare window extensions because monitoring scattered online text updates is highly difficult.",
+            solution: "The system changes text announcements into simple local audio responses, letting users check eligibility criteria over standard calls.",
+            features: ["Text-to-speech audio updates", "Welfare criteria matching", "Voice eligibility checks", "Offline query logging grids"],
+            beneficiaries: ["Rural Female Workers", "Community Welfare Groups", "Edge Neighborhood Networks"],
+            impact: ["Boost local welfare enrollment rates", "Bridge the digital divide across rural areas", "Deliver accurate benefit data directly to users"],
+            sdgs: ["SDG 1 - No Poverty", "SDG 5 - Gender Equality"],
+            inst: "Harcourt Butler Technical University", loc: "Kanpur, Uttar Pradesh", url: "https://asha-ai-techx.pages.dev/"
+        },
+        "shebuilds": {
+            title: "SheBuilds Inclusion",
+            subtitle: "Secure Coding Sandbox for Women Designers",
+            overview: "SheBuilds runs localized technical tutorial workspaces offering secure sandboxes to help women build strong development skills.",
+            problem: "Women face steep entry barriers in software development when structured, introductory practice tracks are absent locally.",
+            solution: "The workspace sets up clear, step-by-step project tracks, connecting users with technical documentation and coding communities safely.",
+            features: ["Secure coding sandbox spaces", "Step-by-step design paths", "Technical term glossaries", "Community code validation logs"],
+            beneficiaries: ["Aspiring Women Developers", "Technical Training Bootcamps", "Career Shifting Candidates"],
+            impact: ["Increase female representation in tech roles", "Provide low-cost software practice tools", "Accelerate entry into technical careers"],
+            sdgs: ["SDG 5 - Gender Equality", "SDG 8 - Decent Work"],
+            inst: "Kalinga Institute of Industrial Technology", loc: "Bhubaneswar, Odisha", url: "https://youtu.be/SZnanzncIB8"
+        },
+        "shecare": {
+            title: "SHE CARE",
+            subtitle: "Secure Remote Safety Counseling Platform",
+            overview: "SHE CARE runs a private, encrypted messaging network connecting women across developing towns with certified safety counselors safely.",
+            problem: "Users facing safety challenges often stay silent when local reporting paths lack privacy and confidentiality links.",
+            solution: "The application secures text consultation routes fully, ensuring data disappears instantly from local devices after sessions end.",
+            features: ["Encrypted communication nodes", "Self-deleting text sessions", "Verified counselor directory", "Instant emergency resource locators"],
+            beneficiaries: ["Women in Developing Towns", "Community Safety Volunteers", "Legal Protection Networks"],
+            impact: ["Provide secure reporting paths for users", "Deliver immediate safety advice safely", "Build trustworthy support systems across areas"],
+            sdgs: ["SDG 5 - Gender Equality", "SDG 16 - Peace & Justice"],
+            inst: "Not Specified", loc: "India", url: ""
+        },
+        "accessbot": {
+            title: "AccessBot",
+            subtitle: "Automated Web Accessibility Auditor",
+            overview: "AccessBot audits institutional portal designs automatically, flagging broken image tags and unreadable form blocks to secure universal access.",
+            problem: "Public university links often block screen reader devices, accidentally stopping disabled candidates during applications.",
+            solution: "The scanner crawls interface layers continuously, outputting code fixes directly to administrative teams to fix links.",
+            features: ["Accessibility error loggers", "Screen reader simulation scripts", "Automated code correction tips", "Universal access scoreboards"],
+            beneficiaries: ["Disabled Academic Applicants", "University Web Master Teams", "Compliance Verification Boards"],
+            impact: ["Ensure equal digital application access for all", "Enforce clean universal design web standards", "Lower structural site audit costs"],
+            sdgs: ["SDG 4 - Quality Education", "SDG 10 - Reduced Inequalities"],
+            inst: "GL Bajaj Institute of Technology and Management", loc: "Greater Noida, Uttar Pradesh", url: "http://accessbot.in"
+        },
+        "securityyouth": {
+            title: "Security Key Youth",
+            subtitle: "Discreet Physical Tapping Alarm Tracker",
+            overview: "A discreet background tracking system designed to send quick location alerts via unique tapping patterns on standard device keys.",
+            problem: "Standard safety tracking tools require open screen activation, which becomes impossible during sudden personal threats.",
+            solution: "The background tool listens for specific offline key combinations, routing precise map coordinates to trusted networks safely.",
+            features: ["Background shortcut listeners", "Discreet coordinate routing nodes", "Low battery power profiles", "Offline alert backup scripts"],
+            beneficiaries: ["Student Transit Groups", "Night Operations Workers", "Campus Safety Teams"],
+            impact: ["Deliver immediate location maps during crises", "Provide discreet, non-visible security choices", "Improve community response speeds significantly"],
+            sdgs: ["SDG 5 - Gender Equality", "SDG 11 - Sustainable Cities"],
+            inst: "Sanskriti University", loc: "Mathura, Uttar Pradesh", url: ""
+        },
+        "silentbridge": {
+            title: "SilentBridge",
+            subtitle: "High-Speed Mobile Sign Translation Engine",
+            overview: "SilentBridge records sign language gestures via mobile cameras, converting movements into clear spoken local audio tracks instantly.",
+            problem: "Hearing-impaired individuals face daily communication blocks when interacting with public services without handlers.",
+            solution: "The software tracks hand positions in real-time, matching gestures to dictionary definitions to read terms aloud clearly.",
+            features: ["Kinetic gesture classification loops", "Instant voice synthesis outputs", "Local dictionary lookup grids", "Low-latency camera tracking models"],
+            beneficiaries: ["Hearing-Impaired Individuals", "Public Desk Servicing Staff", "Inclusive Office Workspaces"],
+            impact: ["Unlock smooth everyday interactions anywhere", "Support independent civic service visits", "Lower the cost of regular translation services"],
+            sdgs: ["SDG 8 - Decent Work", "SDG 10 - Reduced Inequalities"],
+            inst: "National Institute of Technology Tiruchirappalli", loc: "Tiruchirappalli, Tamil Nadu", url: "http://13.219.254.74/login"
+        },
+        "nirbhay": {
+            title: "Nirbhay",
+            subtitle: "Low-Footprint Emergency Tracker",
+            overview: "Nirbhay runs a minimal communication link that updates location coordinates automatically to selected networks during connection drops.",
+            problem: "Safety apps fail when traveling through deep regional blindspots where standard internet links disappear completely.",
+            solution: "The application shifts telemetry data over basic cellular strings, keeping communication channels up through low signals.",
+            features: ["Low signal data compression profiles", "Background location routing loops", "Automated alert backup lines", "Minimal battery drain footprints"],
+            beneficiaries: ["Regional Travel Commuters", "Rural Area Field Volunteers", "Edge Transit Operators"],
+            impact: ["Keep security tracking up through blindspots", "Lower device battery drainage hazards", "Provide reliable backup communication lines"],
+            sdgs: ["SDG 5 - Gender Equality", "SDG 11 - Sustainable Cities"],
+            inst: "Siliguri Institute of Technology", loc: "Siliguri, West Bengal", url: ""
+        },
+        "sudarshan": {
+            title: "SUDARSHAN",
+            subtitle: "Offline Radio Emergency Beacon Mesh",
+            overview: "SUDARSHAN uses low-power radio links to send emergency signals across mountainous areas completely independent of phone towers.",
+            problem: "Natural disasters cut off remote mountain valleys entirely when standard phone infrastructure breaks down.",
+            solution: "The radio hardware creates a local connection web, passing emergency coordinates along neighbor nodes back to control bases safely.",
+            features: ["Low-power radio link drivers", "Node-to-node relay path finders", "Offline map coordinate storages", "Rugged field design layouts"],
+            beneficiaries: ["Remote Mountain Villages", "Disaster Response Teams", "High-Altitude Trekking Units"],
+            impact: ["Maintain rescue communications when grids fail", "Map isolated survivors without cell links", "Provide low-cost safety networks everywhere"],
+            sdgs: ["SDG 11 - Sustainable Cities", "SDG 13 - Climate Action"],
+            inst: "Chandigarh University", loc: "Mohali, Punjab", url: "https://drive.google.com/open?id=1GR9Wslc6M5YeZ6ahMU57lt4Fgqywf-3i"
+        },
+
+        // --- GOVERNANCE ---
+        "trustlens": {
+            title: "Trustlens",
+            subtitle: "Immutable Municipal Accounting Ledger",
+            overview: "Trustlens uses protected blockchain databases to track local contract payments, preventing internal manipulation of municipal records completely.",
+            problem: "Traditional infrastructure accounting spreadsheets invite budget changes and data risks due to open editing access.",
+            solution: "The platform locks transaction items permanently into shared logs, letting project teams verify public funding steps clearly.",
+            features: ["Permanent transaction block logs", "Contract payment milestone flags", "Multi-signature verification paths", "Public funding dashboard metrics"],
+            beneficiaries: ["Municipal Oversight Boards", "Public Works Contractors", "Taxpayer Integrity Circles"],
+            impact: ["Eliminate unauthorized adjustments in files", "Build complete trust in public development logs", "Lower manual auditing timelines significantly"],
+            sdgs: ["SDG 9 - Industry & Innovation", "SDG 16 - Peace & Justice"],
+            inst: "NDMVP Samaj's Karmaveer Adv. Baburao Ganpatrao Thakare College of Engineering", loc: "Nashik, Maharashtra", url: "https://github.com/umeshpagere/trustlens_backend"
+        },
+        "solarcctv": {
+            title: "Solar AI CCTV",
+            subtitle: "Energy-Adaptive Visual Safety Node",
+            overview: "A solar-powered security node that scales its image analysis frequency dynamically based on current battery levels in off-grid spots.",
+            problem: "Off-grid safety cameras shut down completely during cloudy weeks because continuous tracking drains small backup batteries fast.",
+            solution: "The camera switches algorithm states intelligently, dropping power consumption to maintain core security alerts running.",
+            features: ["Adaptive power analysis loops", "On-device frame checking tools", "Solar generation log sheets", "Low energy sleep triggers"],
+            beneficiaries: ["Off-Grid Rural Settlements", "Forest Boundary Outposts", "Isolated Public Infrastructure"],
+            impact: ["Keep security lines running through storm weeks", "Lower solar panel installation costs", "Avoid total system power failures perfectly"],
+            sdgs: ["SDG 7 - Affordable & Clean Energy", "SDG 11 - Sustainable Cities"],
+            inst: "KSR Rangasamy College of Technology", loc: "Tiruchengode, Tamil Nadu", url: "https://docs.google.com/presentation/u/0/d/1PEBo0yDBLPvjWv79MmV_s0JstZfJ2iKW/edit"
+        },
+        "disasterdrone": {
+            title: "Disaster Drone",
+            subtitle: "Autonomous Emergency Supply Navigator",
+            overview: "Navigation firmware designed to guide autonomous delivery quadcopters through rugged terrain to drop medical boxes safely.",
+            problem: "Landslides isolate mountain clinics entirely, while dangerous weather prevents standard rescue helicopters from landing safely.",
+            solution: "The drone tracks wind and terrain data dynamically, updating its path to complete drops without pilot links.",
+            features: ["Autonomous wind compensation loops", "Dynamic terrain altitude maps", "Secure box dropping switches", "Offline route recalculators"],
+            beneficiaries: ["Isolated Hill Communities", "Emergency Medical Teams", "Disaster Management Hubs"],
+            impact: ["Deliver vital medicine within critical hours", "Bypass road blockage issues perfectly", "Keep human flight teams out of high-risk weather"],
+            sdgs: ["SDG 3 - Good Health", "SDG 11 - Sustainable Cities"],
+            inst: "KSR Rangasamy College of Technology", loc: "Tiruchengode, Tamil Nadu", url: "https://drive.google.com/drive/folders/1kaU9VoWdHiDM8ZqvmeN6qgd_UFK0zNNW"
+        },
+        "graminsuraksha": {
+            title: "Gramin Suraksha",
+            subtitle: "Integrated Rural Infrastructure Monitor",
+            overview: "Gramin Suraksha maps village assets like streetlights and water handpumps into a clean management app for local councils.",
+            problem: "Rural asset failures stay broken for weeks because manual maintenance reporting relies on slow, paper-based paths.",
+            solution: "The dashboard lets local workers log failures instantly, tracking repair steps automatically to keep services up.",
+            features: ["Visual asset status maps", "Instant failure entry forms", "Contractor performance timers", "Maintenance cost log sheets"],
+            beneficiaries: ["Village Panchayats", "Local Infrastructure Technicians", "Rural Community Inhabitants"],
+            impact: ["Cut down asset downtime significantly", "Ensure tax funds repair critical lines fast", "Simplify infrastructure management for small teams"],
+            sdgs: ["SDG 11 - Sustainable Cities"],
+            inst: "KSR Rangasamy College of Technology", loc: "Tiruchengode, Tamil Nadu", url: ""
+        },
+        "auditease": {
+            title: "AuditEase",
+            subtitle: "Automated Financial Statement Auditor",
+            overview: "AuditEase scans municipal ledger files automatically, cross-checking item lists against past transaction values to find errors fast.",
+            problem: "Manual financial audits take months to finish, allowing errors and misallocations to slip past correction windows.",
+            solution: "The system reads spreadsheets instantly, tracking data mismatches and flagging questionable items for review.",
+            features: ["Automated entry checking tools", "Data variance indicators", "Transactional history matchers", "Audit report builders"],
+            beneficiaries: ["Local Accounting Officers", "State Finance Inspectors", "Municipal Management Units"],
+            impact: ["Locate accounting discrepancies immediately", "Prevent annual fund misallocation issues", "Lower public transaction review costs"],
+            sdgs: ["SDG 16 - Peace & Justice"],
+            inst: "Not Specified", loc: "India", url: ""
+        },
+        "proofyai": {
+            title: "Proofy.AI",
+            subtitle: "Cryptographic Media Verification Service",
+            overview: "Proofy.AI parses image metadata and structure layers to verify public grievance photos, protecting citizen feedback tools from fake submissions.",
+            problem: "Automated civic reporting utilities get flooded with old internet photos, slowing down real local maintenance runs.",
+            solution: "The verification tool validates original capture times and device steps, passing only confirmed, authentic issues to repair lines.",
+            features: ["Metadata validation checks", "Image structure analysis tools", "Duplicate submission identification", "Secure verification certificate outputs"],
+            beneficiaries: ["City Maintenance Hubs", "Public Accountability Officers", "Grievance Portal Managers"],
+            impact: ["Filter out spam and fake reports completely", "Ensure repair teams focus on true current issues", "Maintain high trust in public tracking portals"],
+            sdgs: ["SDG 9 - Industry & Innovation", "SDG 16 - Peace & Justice"],
+            inst: "VIT AP University", loc: "Amaravati, Andhra Pradesh", url: "https://proofyyy.vercel.app/"
+        },
+        "nagarsetu": {
+            title: "Nagarsetu",
+            subtitle: "Direct Urban Maintenance Network",
+            overview: "Nagarsetu lets town residents upload structural issues like potholes directly to contractor tracking panels for quick repairs.",
+            problem: "City damage reports get lost in deep administrative desks, leaving road hazards unassigned for months.",
+            solution: "The app matches local photo uploads directly to contracted zone teams, starting automated countdowns to fix the issue.",
+            features: ["Geotagged image upload slots", "Automated work team assignments", "Public repair timeline indicators", "Work completion check-off views"],
+            beneficiaries: ["Urban Vehicle Drivers", "City Maintenance Engineers", "Municipal Project Directors"],
+            impact: ["Speed up basic pothole fixes significantly", "Hold local repair teams accountable publicly", "Minimize vehicle damage risks across roads"],
+            sdgs: ["SDG 11 - Sustainable Cities"],
+            inst: "University of Allahabad", loc: "Prayagraj, Uttar Pradesh", url: "https://app.flutterflow.io/project/prototypedesign-d0fx28"
+        },
+        "gramsetu": {
+            title: "GramSetu",
+            subtitle: "Simplified Rural Certificate Manager",
+            overview: "GramSetu packs complex state documentation forms into a single, straightforward input screen for rural computer kiosks.",
+            problem: "Villagers lose day wages traveling to city centers just to clear basic certificate application errors.",
+            solution: "The local system uses clear, guided inputs to check applications early, cutting down rejection rates before final processing.",
+            features: ["Guided form input workflows", "Local data validation checks", "Certificate status tracking lines", "Local document print interfaces"],
+            beneficiaries: ["Rural Kiosk Handlers", "Agricultural Family Units", "District Office Handlers"],
+            impact: ["Save travel costs and day wages for families", "Reduce document processing backlogs significantly", "Bring clear data tracking to rural areas"],
+            sdgs: ["SDG 10 - Reduced Inequalities", "SDG 16 - Peace & Justice"],
+            inst: "NRI Institute of Technology", loc: "Vijayawada, Andhra Pradesh", url: "https://grammen-connect.netlify.app/"
+        },
+        "grammeter": {
+            title: "Gram Meter",
+            subtitle: "Rural Power Grid Telemetry Analyser",
+            overview: "Gram Meter monitors line parameters across village transformer networks, mapping usage spikes to prevent unexpected transformer burnouts.",
+            problem: "Agricultural water pumps overload rural power lines without warning, burning expensive transformers and causing long blackouts.",
+            solution: "The tracking software records current fluctuations dynamically, warning power teams to adjust loads before failures happen.",
+            features: ["Line current tracking tools", "Transformer load alerts", "Peak usage trend estimators", "Grid phase balance indicators"],
+            beneficiaries: ["Rural Power Utilities", "Agricultural Operation Groups", "Village Enterprise Units"],
+            impact: ["Prevent expensive grid hardware failures", "Lower transformer repair costs significantly", "Keep regional power lines up consistently for fields"],
+            sdgs: ["SDG 7 - Affordable & Clean Energy", "SDG 9 - Industry & Innovation"],
+            inst: "Nirma University", loc: "Ahmedabad, Gujarat", url: "https://drive.google.com/open?id=1G6Lw11GZEkQ7w0nM8Fp8rAOPKAwCDWrK"
+        },
+        "damagedrone": {
+            title: "Damage Detection Drone",
+            subtitle: "Overpass Concrete Integrity Inspector",
+            overview: "An automated aerial inspector system scanning underneath bridge structures to locate structural cracks using camera mapping.",
+            problem: "Manual concrete inspections require expensive climbing setups and lane shutdowns, leaving bridges unverified for years.",
+            solution: "The drone flies precise structural loops, measuring crack sizes down to millimeters to highlight critical items for repair teams.",
+            features: ["Automated bridge flight layouts", "Crack measurement imaging tools", "Structural hazard scoring indexes", "Historical concrete shift logs"],
+            beneficiaries: ["Highway Safety Directors", "Public Transit Engineers", "Municipal Transport Budgeting Teams"],
+            impact: ["Identify bridge issues before failures escalate", "Eliminate risky manual climbing checks completely", "Optimize road repair fund allocations perfectly"],
+            sdgs: ["SDG 9 - Industry & Innovation", "SDG 11 - Sustainable Cities"],
+            inst: "IILM University", loc: "Gurugram, Haryana", url: "https://drive.google.com/drive/folders/1VwzxeF4WqVCijS-uFLZQBlFK2rgrSJgh"
+        },
+        "scambait": {
+            title: "Scam Bait AI",
+            subtitle: "Citizen Message Risk Filtering Tool",
+            overview: "Scam Bait AI tracks message styles and link variables inside local chats, warning users of financial fishing attempts before links are opened.",
+            problem: "Older citizens lose life savings to deceptive digital lottery claims because mobile links look completely authentic.",
+            solution: "The text verification app flags matching bad link patterns locally, explaining the hidden text risks to users clearly.",
+            features: ["Deceptive text matching tools", "Bad link warning flags", "Offline threat reference lists", "Simple risk description views"],
+            beneficiaries: ["New Smart Phone Consumers", "Senior Device Users", "Rural Banking Consumers"],
+            impact: ["Prevent devastating personal banking losses", "Build digital safety confidence among consumers", "Lower cybercrime reporting burdens locally"],
+            sdgs: ["SDG 10 - Reduced Inequalities", "SDG 16 - Peace & Justice"],
+            inst: "Vivekananda Institute of Professional Studies", loc: "New Delhi", url: ""
+        },
+        "foodshare": {
+            title: "FoodShare",
+            subtitle: "Event Surplus Redistribution Router",
+            overview: "FoodShare links banquet venues directly with near community kitchens to move fresh excess food safely before spoiling.",
+            problem: "Tons of fresh wedding food go straight to garbage dumps while near shelters face constant ingredient shortages.",
+            solution: "The platform calculates transit times and storage needs, routing vans to collect and deliver food safely within safe windows.",
+            features: ["Surplus volume logging tools", "Transit time matching logic", "Kitchen container tracking lines", "Food temperature safety lists"],
+            beneficiaries: ["Event Catering Organizers", "Community Kitchen Handlers", "Urban Homeless Networks"],
+            impact: ["Divert nutritious food from landfills entirely", "Lower operational ingredient costs for shelters", "Provide fresh meals to under-resourced families"],
+            sdgs: ["SDG 2 - Zero Hunger", "SDG 12 - Responsible Consumption"],
+            inst: "Not Specified", loc: "India", url: "https://foodshare2-frontend.onrender.com/"
+        },
+        "meditatva": {
+            title: "MediTatva",
+            subtitle: "Pharmaceutical Batch Authentication System",
+            overview: "MediTatva logs drug batch history details onto distributed networks, letting pharmacies scan codes to verify authentic origins instantly.",
+            problem: "Counterfeit medical boxes enter retail supply lines easily, risking patient safety due to poor tracking links.",
+            solution: "The tracking software records factory manufacturing signatures permanently, flagging copied codes instantly during store scans.",
+            features: ["Batch factory logging tools", "Store code scanner options", "Distribution route recorders", "Authenticity verification indicators"],
+            beneficiaries: ["Neighborhood Retail Pharmacies", "Medical Logistics Managers", "Patient Care Consumers"],
+            impact: ["Block counterfeit drug boxes from shelves completely", "Ensure high confidence in community prescriptions", "Simplify medication recall operations during safety alerts"],
+            sdgs: ["SDG 3 - Good Health", "SDG 9 - Industry & Innovation"],
+            inst: "Chandigarh University", loc: "Mohali, Punjab", url: "https://meditatva.vercel.app/"
+        },
+
+        // --- HEALTH & NUTRITION ---
+        "healthassist": {
+            title: "Health Assist AI",
+            subtitle: "Voice-Driven Primary Symptom Classifier",
+            overview: "A spoken consultation tool running clinical parsing scripts to help visiting field volunteers log clear diagnostic charts in remote areas.",
+            problem: "Rural visiting workers manage wide checkup queues with little support, missing core clinical markers in complex records.",
+            solution: "The software structures voice descriptions into clear metric histories, highlighting priority items to aid local care decisions.",
+            features: ["Spoken text parsing scripts", "Clinical marker indicators", "Offline record save modes", "Health trend tracking dashboards"],
+            beneficiaries: ["Visiting Health Workers", "Remote Community Outposts", "District Clinic Directors"],
+            impact: ["Improve field record accuracy significantly", "Highlight urgent cases for city transfer fast", "Lower primary care diagnostic friction"],
+            sdgs: ["SDG 3 - Good Health", "SDG 10 - Reduced Inequalities"],
+            inst: "Kakinada Institute of Engineering and Technology", loc: "Kakinada, Andhra Pradesh", url: "https://lachi9959-g.github.io/health-assist/"
+        },
+        "jarvis": {
+            title: "JARVIS AI",
+            subtitle: "Clinical Administrative File Parser",
+            overview: "An automated administrative assistant reading intake document fields to categorize medical paperwork schedules efficiently.",
+            problem: "Clinical staff spend heavy hours sorting physical checkup sheets manually, delaying patient intake times.",
+            solution: "JARVIS parses textual scan inputs dynamically, placing records into appropriate priority folders automatically.",
+            features: ["Intake document parsing loops", "Automated category assignment", "Processing timeline meters", "Secure local record storage"],
+            beneficiaries: ["Hospital Reception Crews", "Medical Records Managers", "Outpatient Clinic Networks"],
+            impact: ["Reduce administrative intake wait times", "Eliminate document misplacement hazards", "Free up nursing staff for frontline care"],
+            sdgs: ["SDG 3 - Good Health", "SDG 9 - Industry & Innovation"],
+            inst: "KSR Rangasamy College of Technology", loc: "Tiruchengode, Tamil Nadu", url: ""
+        },
+        "watermonitor": {
+            title: "IoT Water Quality Monitor",
+            subtitle: "Real-Time Pipeline Toxicity Tester",
+            overview: "A distributed hardware testing layout monitoring turbidity variations and total dissolved solids in community water supplies.",
+            problem: "Contamination events in community lines remain undetected for days until public health patterns highlight water issues.",
+            solution: "The inline testing cells evaluate flow attributes continuously, triggering electronic cutoff valves if metric steps exceed safe limits.",
+            features: ["Inline turbidity metric monitors", "Automated cutoff valve links", "Toxicity trend alert panels", "Low power field mesh radios"],
+            beneficiaries: ["Community Water Supply Boards", "Rural Health Enforcement Units", "Village Residential Users"],
+            impact: ["Stop water contamination illnesses instantly", "Track line quality changes dynamically", "Lower manual testing labor expenses"],
+            sdgs: ["SDG 6 - Clean Water", "SDG 3 - Good Health"],
+            inst: "KSR Rangasamy College of Technology", loc: "Tiruchengode, Tamil Nadu", url: "https://water-ai-one.vercel.app/"
+        },
+        "ayursutra": {
+            title: "AyurSutra",
+            subtitle: "Herbal Processing Sourcing Ledger",
+            overview: "AyurSutra maps traditional crop harvest variables, tracking supply batches from rural collectors down to production facilities.",
+            problem: "Natural supplement builders struggle with inconsistent raw batch metrics because collection routes stay unrecorded.",
+            solution: "The application registers source conditions and drying durations, certifying component consistency profiles before manufacturing.",
+            features: ["Source route collection sheets", "Drying condition logs", "Batch identifier generation", "Quality certification fields"],
+            beneficiaries: ["Medicinal Plant Collectors", "Traditional Medicine Laboratories", "Quality Verification Inspectors"],
+            impact: ["Secure reliable raw component properties", "Validate collector payment records clearly", "Optimize natural product inventory steps"],
+            sdgs: ["SDG 3 - Good Health", "SDG 12 - Responsible Consumption"],
+            inst: "KSR Rangasamy College of Technology", loc: "Tiruchengode, Tamil Nadu", url: "https://delhi-hackothan-new-jn66.vercel.app/"
+        },
+        "ayurvedicdiet": {
+            title: "Ayurvedic Dietician",
+            subtitle: "Somatic Metric Nutritional Planner",
+            overview: "A cloud-configured meal template builder calculating personalized ingredient plans using physical attribute metrics.",
+            problem: "Standard generic nutritional charts ignore individual constitutional variances, leading to poor dietary compliance.",
+            solution: "The formula engine matches recorded user body attributes to ideal vegetable and spice combinations to design sustainable plans.",
+            features: ["Somatic attribute entry fields", "Personalized ingredient matching", "Seasonal adjustment charts", "Nutritional step calculators"],
+            beneficiaries: ["Holistic Care Practitioners", "Wellness Center Managers", "Independent Healthy Living Users"],
+            impact: ["Improve lifestyle balance score profiles", "Design easy-to-use custom nutrition templates", "Support traditional wellness tracking paths"],
+            sdgs: ["SDG 3 - Good Health"],
+            inst: "Not Specified", loc: "India", url: "https://distort-candle-73755258.figma.site"
+        },
+        "pranava": {
+            title: "PRANAVA AI",
+            subtitle: "Heart Rate Feedback Stress Optimizer",
+            overview: "PRANAVA AI processes minute pulse variation signals via standard mobile lenses, guiding users through respiration routines to lower acute stress indicators.",
+            problem: "Workplace high-pressure environments create hidden physiological strain that drives down developer concentration levels over time.",
+            solution: "The tracking software records real-time capillary pulse changes, shifting breath training paces to rebalance autonomic metrics safely.",
+            features: ["Camera-based pulse reading loops", "Respiration timing indicators", "Autonomic strain tracking graphs", "Progress scoring dashboards"],
+            beneficiaries: ["Corporate Desk Professionals", "Technical Engineering Labs", "Mental Wellness Advisors"],
+            impact: ["Reduce immediate acute stress scores on-site", "Improve mental clarity metrics during tasks", "Provide low-cost personal recovery utilities"],
+            sdgs: ["SDG 3 - Good Health", "SDG 8 - Decent Work"],
+            inst: "KSR Rangasamy College of Technology", loc: "Tiruchengode, Tamil Nadu", url: "https://pranava-ai-cfrp.vercel.app/"
+        },
+        "lonelyless": {
+            title: "LonelyLess",
+            subtitle: "Natural Dialogue Well-Being Companion",
+            overview: "An automated chat companion deploying conversational script loops to offer regular interaction for individuals facing isolation.",
+            problem: "Isolated home-bound individuals experience cognitive drop-offs when regular conversational practice is completely missing.",
+            solution: "The tool engages users in supportive dialogue routines, noting changes in expression patterns to flag low wellness trends early.",
+            features: ["Supportive dialogue script paths", "Expression metric analysis loops", "Daily connection reminder clocks", "Emergency support alert nodes"],
+            beneficiaries: ["Isolated Senior Individuals", "Home Care Support Circles", "Mental Health Care Organizations"],
+            impact: ["Maintain core cognitive communication functions", "Provide steady conversational options anytime", "Flag declining emotional health markers early"],
+            sdgs: ["SDG 3 - Good Health", "SDG 10 - Reduced Inequalities"],
+            inst: "KSR Rangasamy College of Technology", loc: "Tiruchengode, Tamil Nadu", url: "https://lonely-less1.vercel.app/"
+        },
+        "aarogyaswarm": {
+            title: "Aarogya Swarm",
+            subtitle: "Distributed Rural Medical Record sync",
+            overview: "Aarogya Swarm establishes local database syncing nodes, allowing field clinics to update patient charts without centralized web links.",
+            problem: "Remote health centers lose access to patient files when regional internet backbones drop, halting critical care runs.",
+            solution: "The swarming data architecture coordinates local changes across clinic boxes over basic local networks, handling transfers cleanly.",
+            features: ["Local device syncing protocols", "Offline patient file templates", "Encrypted record block storage", "Network conflict resolution nodes"],
+            beneficiaries: ["Remote Healthcare Providers", "Traveling Field Medical Teams", "Border District Communities"],
+            impact: ["Keep client health histories accessible anywhere", "Eliminate paper record dependency issues", "Secure diagnostic history timelines perfectly"],
+            sdgs: ["SDG 3 - Good Health", "SDG 9 - Industry & Innovation"],
+            inst: "Dwarkadas J. Sanghvi College of Engineering", loc: "Mumbai, Maharashtra", url: "https://linktr.ee/TeamTensors"
+        },
+        "raktanet": {
+            title: "RaktaNet",
+            subtitle: "Automated Regional Blood Dispatcher",
+            overview: "RaktaNet matches urgent hospital blood bank shortage alerts directly with registered area donors using location mapping scripts.",
+            problem: "Emergency operations stall because matching rare blood group donors across separated hospital databases takes too long manually.",
+            solution: "The dispatcher parses group specifications instantly, routing location details to suitable donors to cut pickup times down.",
+            features: ["Blood group matching scripts", "Urgent location routing grids", "Real-time bank inventory views", "Secure donor privacy masks"],
+            beneficiaries: ["Hospital Emergency Rooms", "Regional Blood Bank Managers", "Acute Trauma Care Patients"],
+            impact: ["Cut down critical blood transit wait times", "Optimize emergency volunteer responses", "Maintain transparent area bank inventory lines"],
+            sdgs: ["SDG 3 - Good Health", "SDG 11 - Sustainable Cities"],
+            inst: "VIT Bhopal University", loc: "Bhopal, Madhya Pradesh", url: "https://rakta-net.vercel.app/"
+        },
+        "checkfirst": {
+            title: "Checkfirst",
+            subtitle: "Foundational Symptom Assessment Layout",
+            overview: "Checkfirst walks families through basic primary health checklists, offering simple care advice before users organize long travels for clinics.",
+            problem: "Rural families spend heavy day wages traveling to distant city clinics for simple issues that home recovery steps can handle.",
+            solution: "The interactive decision tree checks symptom patterns against standard medical guidelines, sorting mild items from emergency issues clearly.",
+            features: ["Guided clinical query paths", "Care triage indicators", "Local clinic directory lookups", "Offline access database caches"],
+            beneficiaries: ["Rural Family Households", "Community Health Volunteers", "Overburdened District Clinics"],
+            impact: ["Save unnecessary travel expenses for families", "Reduce long outpatient lines at clinics", "Ensure true emergency cases get seen fast"],
+            sdgs: ["SDG 3 - Good Health", "SDG 10 - Reduced Inequalities"],
+            inst: "SRM University", loc: "Amaravati, Andhra Pradesh", url: "http://checkfirst.lovable.app"
+        },
+        "medaudit": {
+            title: "MedAudit AI",
+            subtitle: "Clinical Administrative Delay Analyzer",
+            overview: "An administrative auditing system reading timestamp logs across clinic desks to isolate processing friction points.",
+            problem: "Outpatient processing backlogs keep vulnerable individuals waiting for hours due to unmonitored tracking steps.",
+            solution: "MedAudit scans workflow databases dynamically, highlighting specific desk routing issues to clear patient handling speeds.",
+            features: ["Workflow delay tracking loops", "Resource balance meters", "Patient handling time counters", "Bottleneck export reports"],
+            beneficiaries: ["Hospital Operation Directors", "Clinic Desk Supervisors", "Patient Care Quality Inspectors"],
+            impact: ["Lower total patient waiting times inside buildings", "Balance workload pressures across staff layers", "Optimize clinical processing efficiency profiles"],
+            sdgs: ["SDG 3 - Good Health", "SDG 16 - Peace & Justice"],
+            inst: "Amrita Vishwa Vidyapeetham", loc: "Coimbatore, Tamil Nadu", url: "https://youtu.be/MedAuditAI"
+        },
+        "neurovibe": {
+            title: "Neuro-Vibe",
+            subtitle: "Cognitive Fatigue Signal Tracker",
+            overview: "A tracking script evaluating minute reaction speed shifts on key tasks to flag cognitive exhaustion markers across intensive jobs.",
+            problem: "High-concentration fields face costly technical errors when operators push through deep mental fatigue patterns unknowingly.",
+            solution: "The software tracks input latency variations during regular breaks, advising users to take down times when drops appear.",
+            features: ["Input latency checking scripts", "Fatigue accumulation models", "Adaptive task shift warning flags", "Personal recovery logs"],
+            beneficiaries: ["Software Development Teams", "Control Center Operators", "High-Stress Technical Crews"],
+            impact: ["Lower technical bug injection rates significantly", "Protect professionals from severe clinical burnout", "Maintain consistent task execution safety profiles"],
+            sdgs: ["SDG 3 - Good Health", "SDG 8 - Decent Work"],
+            inst: "Coimbatore Institute of Technology", loc: "Coimbatore, Tamil Nadu", url: "https://github.com/swankystark/Neuro-Vibe"
+        },
+        "docmate": {
+            title: "DocMate",
+            subtitle: "Secure Multi-Tier Case File Transfer",
+            overview: "DocMate uses secure transaction protocols to let village health centers share patient diagnostic histories with advanced city hospitals instantly.",
+            problem: "Patients lose treatment continuity when moving to city facilities because paper diagnostic records get misplaced during transit.",
+            solution: "The web layout protects file transfers fully, matching original files with target clinic doctor panels to secure care steps.",
+            features: ["Encrypted document transfer nodes", "Patient authorization checks", "Cross-clinic formatting tools", "Treatment history summary views"],
+            beneficiaries: ["Rural Referral Patients", "Specialized Hospital Doctors", "Community Clinic Operators"],
+            impact: ["Eliminate duplicate diagnostic scan costs", "Maintain unbroken history files for complex cases", "Speed up specialist validation steps significantly"],
+            sdgs: ["SDG 3 - Good Health", "SDG 10 - Reduced Inequalities"],
+            inst: "Sanskriti University", loc: "Mathura, Uttar Pradesh", url: "https://drive.google.com/file/d/1_04X4pVMQp09h-6G5F6IruvqSeRKbdYm/view"
+        },
+        "docagent": {
+            title: "Doc Agent",
+            subtitle: "Contextual Case Summary Generator",
+            overview: "Doc Agent parses long multi-page clinical records, outputting concise single-page history summaries to assist daily rounding teams.",
+            problem: "Doctors spend precious minutes reading through dense file stacks during emergency intakes, delaying immediate treatment decisions.",
+            solution: "The software scans key text strings dynamically, highlighting verified allergies and active prescriptions into clear header boxes instantly.",
+            features: ["Text file data parsing loops", "Allergy alert highlight blocks", "Prescription summary grids", "Formatting extraction tools"],
+            beneficiaries: ["Emergency Intaking Physicians", "Ward Rounding Nursing Staff", "Medical Data Archivists"],
+            impact: ["Cut down chart review times before treatments", "Minimize medication error risks during changes", "Streamline daily ward handover shifts beautifully"],
+            sdgs: ["SDG 3 - Good Health", "SDG 9 - Industry & Innovation"],
+            inst: "Indraprastha Institute of Information Technology Delhi", loc: "New Delhi", url: "https://doc-agent-deepak.vercel.app/"
+        },
+        "mindguard": {
+            title: "MindGuard AI",
+            subtitle: "Operational Burnout Risk Filter",
+            overview: "An interaction analysis framework tracing interface input velocity patterns to flag early focus drop-offs during long computing duties.",
+            problem: "Technical professionals experience screen fatigue that leads to high drop-out rates and declining operational outputs.",
+            solution: "The app measures timing variances across input controls, prompting team members to take micro-rests when fatigue indices cross thresholds.",
+            features: ["Input velocity tracking loops", "Fatigue index calculation modules", "Micro-rest reminder prompts", "Anonymized team wellness charts"],
+            beneficiaries: ["Remote Technical Workforces", "Complex Operations Teams", "Organizational Well-Being Planners"],
+            impact: ["Reduce severe workplace screen exhaustion", "Maintain healthy team output balances", "Build supportive working environments metrics"],
+            sdgs: ["SDG 3 - Good Health", "SDG 8 - Decent Work"],
+            inst: "Sir M. Visvesvaraya Institute of Technology", loc: "Bengaluru, Karnataka", url: "https://mindguard-ai-tan.vercel.app/"
+        },
+        "ydhya": {
+            title: "Ydhya",
+            subtitle: "Outpatient Recovery Tracking Matrix",
+            overview: "Ydhya runs a clean mobile tracking dashboard that connects home-recovering patients directly with their outpatient care managers.",
+            problem: "Surgical clients face unexpected readmissions when minor post-op home care deviations develop without clinical eyes watching.",
+            solution: "The system collects simple daily recovery updates, flagging anomalies to clinical coordinators before complications develop.",
+            features: ["Daily recovery indicator loggers", "Outpatient metric alert lines", "Direct messaging connection nodes", "Treatment reminder alerts"],
+            beneficiaries: ["Post-Op Home Recovering Clients", "Clinical Care Coordinators", "Hospital Capacity Planners"],
+            impact: ["Lower preventable emergency readmission metrics", "Extend trustworthy care loops past building walls", "Improve family confidence during recovery home phases"],
+            sdgs: ["SDG 3 - Good Health"],
+            inst: "National Institute of Technology Tiruchirappalli", loc: "Tiruchirappalli, Tamil Nadu", url: "https://github.com/Keyashqa/AIforGood"
+        },
+        "auravixia": {
+            title: "Auravixia",
+            subtitle: "Somatic Acoustic Relaxation Environment",
+            overview: "Auravixia builds a controlled sensory environment using virtual auditory modeling to guide users into deep, restful states safely.",
+            problem: "Chronic sleep issues and anxiety loops lower productivity scores across intensive urban academic clusters heavily.",
+            solution: "The software sequences precise, low-frequency soundscapes that help ease overstimulated nervous profiles during short breaks.",
+            features: ["Binaural acoustic model loops", "Guided relaxation timing maps", "Heart-rate verification interfaces", "Customized audio palette pickers"],
+            beneficiaries: ["Highly Stressed Academic Groups", "Night-Shift System Teams", "Foundational Mental Care Centers"],
+            impact: ["Provide accessible personal relaxation choices", "Lower observable acute nervous strain indices", "Improve cognitive focus profiles after recovery breaks"],
+            sdgs: ["SDG 3 - Good Health"],
+            inst: "Not Specified", loc: "India", url: "https://auravixia.vercel.app/"
+        },
+        "sparshcare": {
+            title: "SparshCare AI",
+            subtitle: "Conversational Health Literacy Assistant",
+            overview: "SparshCare AI reads formal medical literature databases, translating diagnostic terms into direct, clear advice for everyday users.",
+            problem: "Jargon-heavy health charts confuse families, causing accidental treatment choices or unnecessary panic loops at home.",
+            solution: "The conversation assistant rephrases technical clinical terms into friendly, accessible local summaries instantly.",
+            features: ["Clinical jargon translation scripts", "Conversational inquiry handlers", "Approved diagnostic search indices", "Local clinic navigation links"],
+            beneficiaries: ["Everyday Health Consumers", "Community Care Volunteers", "Patient Literacy Organizations"],
+            impact: ["Improve community health literacy scores", "Lower anxiety driven by complex terminology", "Help families coordinate care steps with clarity"],
+            sdgs: ["SDG 3 - Good Health", "SDG 10 - Reduced Inequalities"],
+            inst: "Chandigarh University", loc: "Mohali, Punjab", url: "https://github.com/amulyasingh617-lgtm"
+        },
+
+        // --- LIVELIHOOD ---
+        "gigcredit": {
+            title: "GigCredit",
+            subtitle: "On-Device Credit Analytics for Gig Workers",
+            overview: "GigCredit runs local privacy-first evaluation scripts to group irregular app delivery earnings into dependable lending profiles safely.",
+            problem: "Traditional banking lines lock out on-demand delivery drivers because fixed-income history fields return blank lines.",
+            solution: "The app parses delivery logs directly on the handset, building a secure credit index that lets users access fair micro-loans.",
+            features: ["On-device data parsing loops", "Cryptographic profile masking", "Income validation calculators", "Micro-loan repayment dashboards"],
+            beneficiaries: ["On-Demand Delivery Drivers", "Alternative Credit Underwriters", "Urban Freelancer Networks"],
+            impact: ["Bypass predatory informal lending structures", "Open formal credit choices to gig workers", "Secure household cash flow stability lines"],
+            sdgs: ["SDG 1 - No Poverty", "SDG 8 - Decent Work"],
+            inst: "Chennai Institute of Technology", loc: "Chennai, Tamil Nadu", url: "https://d8it4huxumps7.cloudfront.net/uploads/submissions/files/1394395/6978edde0e823_ai_volution_by_team_unicorns.pdf"
+        },
+        "cattlesight": {
+            title: "Cattlesight",
+            subtitle: "Small Dairy Production Ledger",
+            overview: "A lightweight record manager tracking daily dairy collection logs against local feed market costs to map small farm profits.",
+            problem: "Small milk producers operate without clear tracking, missing low-margin trends as input feed prices rise.",
+            solution: "The dashboard simplifies daily record entry, highlighting feed efficiency values to optimize small-holder margins.",
+            features: ["Daily milk volume recorders", "Feed expense tracker grids", "Profit margin trend views", "Fodder pricing alert lines"],
+            beneficiaries: ["Small-Holder Dairy Farmers", "Village Milk Collection Centers", "Livestock Extension Volunteres"],
+            impact: ["Stop farming operations under cost losses", "Optimize feed spending choices accurately", "Secure stable income paths for families"],
+            sdgs: ["SDG 2 - Zero Hunger", "SDG 8 - Decent Work"],
+            inst: "KSR Rangasamy College of Technology", loc: "Tiruchengode, Tamil Nadu", url: ""
+        },
+        "drgsdrone": {
+            title: "DRGS Rescue Drone",
+            subtitle: "Landslide Route Telemetry Engine",
+            overview: "Path calculation software mapping clear transport corridors across broken terrain using aerial photogrammetry lines.",
+            problem: "Landslides isolate hill trading centers completely, cutting off income paths and supply deliveries for weeks.",
+            solution: "The processing system tracks terrain shifts from drone feeds, building alternative route maps for small transport teams fast.",
+            features: ["Terrain shift mapping tools", "Alternative route layout engines", "Safety corridor indicators", "Offline coordinate export blocks"],
+            beneficiaries: ["Hill Trade Cooperatives", "Regional Transport Operators", "Emergency Infrastructure Crews"],
+            impact: ["Reopen trade paths within critical days", "Prevent cargo loss across dangerous trails", "Maintain livelihood continuity in valleys safely"],
+            sdgs: ["SDG 9 - Industry & Innovation", "SDG 11 - Sustainable Cities"],
+            inst: "KSR Rangasamy College of Technology", loc: "Tiruchengode, Tamil Nadu", url: "https://ais-dev-gzpf3kixvms6uhfwavbwdt-636686878865.asia-southeast1.run.app"
+        },
+        "samudrasetu": {
+            title: "Samudra Setu",
+            subtitle: "Coastal Cold-Chain Coordination Grid",
+            overview: "Samudra Setu lets traditional fishing crews track open market prices and ice warehouse capacities before returning to harbor.",
+            problem: "Catch matches poorly with dock demands, forcing crews to dump unsold hauls to middlemen at zero-margin prices.",
+            solution: "The app matches real-time storage vacancies with incoming vessel logs, helping crews secure profitable landing options early.",
+            features: ["Cold storage vacancy indicators", "Real-time dock price trackers", "Incoming boat log manager", "Offline SMS query fallback lines"],
+            beneficiaries: ["Traditional Fishing Crews", "Coastal Market Wholesalers", "Cold-Chain Asset Operators"],
+            impact: ["Eliminate high catch spoil rates entirely", "Raise base trade incomes for fishing families", "Ensure fair market pricing across docks"],
+            sdgs: ["SDG 1 - No Poverty", "SDG 14 - Life Below Water"],
+            inst: "KSR Rangasamy College of Technology", loc: "Tiruchengode, Tamil Nadu", url: "https://samudra-setu-one.vercel.app/"
+        },
+        "publictransport": {
+            title: "Public Transport Tracking",
+            subtitle: "Low-Cost Suburban Location Share",
+            overview: "A lightweight GPS link network bringing reliable tracking data to suburban bus networks without expensive specialized devices.",
+            problem: "Informal workers lose hours waiting for unverified bus arrivals, cutting down daily wage-earning times.",
+            solution: "The system pools driver handset coordinates dynamically, updating simple bus terminal countdown displays cleanly.",
+            features: [" Handset coordinate pooling scripts", "Terminal display updater nodes", "Route delay estimation tools", "Low data transmission profiles"],
+            beneficiaries: ["Suburban Day Wage Workers", "Informal Transport Owners", "Transit Hub Administrators"],
+            impact: ["Save daily commute time for working groups", "Improve schedule trust across routes", "Boost economic coordination speeds across towns"],
+            sdgs: ["SDG 11 - Sustainable Cities", "SDG 8 - Decent Work"],
+            inst: "Not Specified", loc: "India", url: "http://studio-ten-liart-74.vercel.app"
+        },
+        "safeflow": {
+            title: "SafeFlow AI Traffic",
+            subtitle: "Adaptive Trade Route Signal Manager",
+            overview: "SafeFlow running visual queue analysis loops to adjust green light counts dynamically along commercial market lines.",
+            problem: "Fixed signal clocks stack transport trucks in long idling loops, delaying product deliveries and raising fuel expenses.",
+            solution: "The system tracks freight lane lengths, extending green cycles dynamically to clear trading vehicles faster.",
+            features: ["Freight queue tracking loops", "Adaptive signal timing modules", "Grid delay metric trackers", "Truck volume logging dashboards"],
+            beneficiaries: ["Market Logistics Drivers", "Perishable Cargo Suppliers", "Urban Wholesale Operations"],
+            impact: ["Cut down commercial transit delays", "Lower vehicle fuel waste along cargo corridors", "Speed up market stock replacement flows"],
+            sdgs: ["SDG 9 - Industry & Innovation", "SDG 11 - Sustainable Cities"],
+            inst: "KSR Rangasamy College of Technology", loc: "Tiruchengode, Tamil Nadu", url: "https://7ys6kd2afkbjcahpkbehlc.streamlit.app/"
+        },
+        "touristsafety": {
+            title: "Smart Tourist Safety",
+            subtitle: "Ecotourism Trail Safety Link",
+            overview: "A safety check-in utility helping adventure guides log team coordinates across remote tracks automatically.",
+            problem: "Ecotourism routes face tracking drops during storms, risking visitor safety and disrupting local community tourism incomes.",
+            solution: "The platform tracks team steps across checkpoint nodes, raising early safety alarms if guides pass expected times.",
+            features: ["Checkpoint logging interfaces", "Overdue alert generation lines", "Offline terrain route caches", "Team group status boards"],
+            beneficiaries: ["Adventure Travel Guides", "Village Tourism Cooperatives", "Forest Safety Wardens"],
+            impact: ["Secure safety lines across wilderness tracks", "Protect community ecotourism income bases", "Speed up emergency search steps during storms"],
+            sdgs: ["SDG 8 - Decent Work", "SDG 15 - Life on Land"],
+            inst: "KSR Rangasamy College of Technology", loc: "Tiruchengode, Tamil Nadu", url: ""
+        },
+        "inventoryman": {
+            title: "Dynamic Inventory Management",
+            subtitle: "Small Retail Shelf Optimization Platform",
+            overview: "An entry-level inventory system tracking shelf item shifts to adjust supply orders automatically for neighborhood shops.",
+            problem: "Small store owners lock up limited cash in slow items, triggering cash crunches that block shop upgrades.",
+            solution: "The analytic tool flags low-turnover items clearly, recommending cash routing updates to maximize daily sales profits.",
+            features: ["Item turnover trackers", "Cash allocation models", "Expiration monitoring lines", "Reorder alert generation nodes"],
+            beneficiaries: ["Neighborhood Store Owners", "Small Wholesale Distributors", "Independent Micro-Retailers"],
+            impact: ["Lower cash locking in slow inventory items", "Boost shop cash flow flexibility profiles", "Prevent product expiration losses completely"],
+            sdgs: ["SDG 8 - Decent Work", "SDG 12 - Responsible Consumption"],
+            inst: "Indian Institute of Information Technology", loc: "Naya Raipur, Chhattisgarh", url: "https://drive.google.com/file/d/1Rv_tuJsJFhl_Pdgi7VegCMTrvvkYnwWN/view"
+        },
+        "craftconnect": {
+            title: "CraftConnect",
+            subtitle: "Direct Artisan Market Directory",
+            overview: "CraftConnect links rural artisan embroidery centers directly to urban design spaces, managing direct pricing paths cleanly.",
+            problem: "Traditional creators lose up to eighty percent of item values to complex intermediary circles due to zero market access.",
+            solution: "The catalog system displays verified group works directly, allowing fair direct contract setups without broker fees.",
+            features: ["Artisan item display boards", "Direct verification check tags", "Transparent pricing calculations", "Order volume request sheets"],
+            beneficiaries: ["Rural Embroidery Artisans", "Independent Fashion Houses", "Handicraft Development Units"],
+            impact: ["Raise baseline incomes for creator groups significantly", "Preserve unique cultural design methods locally", "Ensure completely transparent transaction paths"],
+            sdgs: ["SDG 1 - No Poverty", "SDG 8 - Decent Work"],
+            inst: "ITM University", loc: "Gwalior, Madhya Pradesh", url: "https://crafttconnect-git-main-khushboocodes-projects.vercel.app"
+        },
+        "aumssian": {
+            title: "AUMSSIAN Defender",
+            subtitle: "Retail Network Traffic Filter",
+            overview: "A network filtering script identifying malicious volume surges to protect small independent trade portals from connection crashes.",
+            problem: "Targeted traffic spikes crash small neighborhood e-commerce sites easily, cutting off sales links during high-volume weeks.",
+            solution: "The traffic tool filters incoming server requests dynamically, dropping bad nodes to keep customer checkout lines open.",
+            features: ["Connection surge checking tools", "Malicious node isolation scripts", "Checkout line priority paths", "System status tracking logs"],
+            beneficiaries: ["Local E-Commerce Sites", "Small Digital Trade Startups", "Independent Online Merchants"],
+            impact: ["Prevent expensive storefront connection downtime", "Secure customer payment transaction lines", "Build trustworthy technical steps for small sites"],
+            sdgs: ["SDG 9 - Industry & Innovation"],
+            inst: "Not Specified", loc: "India", url: "https://aumssian.tech"
+        },
+        "credilume": {
+            title: "CrediLume",
+            subtitle: "Micro-Enterprise Transaction Verification Hub",
+            overview: "CrediLume maps regular business ledger updates to build clear operational histories that help small ventures secure formal development support.",
+            problem: "Small home businesses miss state growth grants because maintaining verified corporate balance sheets is highly complex.",
+            solution: "The platform tracks invoice patterns, structuring simple accounting data into verified reports for application reviews.",
+            features: ["Invoice pattern tracking logs", "Accounting summary builders", "Grant eligibility calculators", "Verification seal generation nodes"],
+            beneficiaries: ["Home Enterprise Operators", "Small Business Planners", "Grant Verification Reviewers"],
+            impact: ["Help micro-businesses secure formal support grants", "Simplify daily transaction recording steps", "Foster stable long-term local asset creation"],
+            sdgs: ["SDG 8 - Decent Work", "SDG 10 - Reduced Inequalities"],
+            inst: "KIET Group of Institutions", loc: "Ghaziabad, Uttar Pradesh", url: "https://credilume.onrender.com/"
+        },
+        "arieengine": {
+            title: "ARIE Engine",
+            subtitle: "Universal Developer Competency Evaluator",
+            overview: "An automated technical evaluator analyzing developer code architectures to generate skill certificates for placement paths.",
+            problem: "Self-taught developers from remote towns get filtered out by classic degree screens before showing code skills.",
+            solution: "The engine runs automated test suites against project repositories, outputting clear verification scores directly to recruiters.",
+            features: ["Code script analysis loops", "Structural error checking logs", "Skill credential generator nodes", "Recruiter review dashboards"],
+            beneficiaries: ["Self-Taught Code Candidates", "Technical Sourcing Coordinators", "Alternative Tech Academies"],
+            impact: ["Open technical career paths to non-degree grads", "Validate true engineering skills automatically", "Lower corporate sourcing filter biases perfectly"],
+            sdgs: ["SDG 4 - Quality Education", "SDG 8 - Decent Work"],
+            inst: "Maharaja Agrasen Institute of Technology", loc: "New Delhi", url: ""
+        },
+        "vikasss": {
+            title: "Vikasss",
+            subtitle: "Cooperative Cargo Pooling Router",
+            overview: "Vikasss pools cargo requirements from minor isolated farms together, managing shared truck routes to secure commercial logistics rates safely.",
+            problem: "Individual producers face high shipping fees when moving small harvest batches independently, destroying item profits.",
+            solution: "The routing software maps cargo volumes across neighbors, bundling orders into shared trucks to slash transit costs.",
+            features: ["Cargo volume calculation grids", "Shared route matching modules", "Logistical cost divider sheets", "Truck arrival tracking views"],
+            beneficiaries: ["Small Isolated Farm Clusters", "Independent Truck Drivers", "Village Agricultural Pools"],
+            impact: ["Slash harvest shipping costs significantly", "Open access to large city markets for edge farms", "Lower overall shipping truck carbon footprints"],
+            sdgs: ["SDG 2 - Zero Hunger", "SDG 8 - Decent Work", "SDG 12 - Responsible Consumption"],
+            inst: "St. Andrews Institute of Technology and Management & Guru Tegh Bahadur 4th Centenary Engineering College", loc: "New Delhi", url: "https://vikasss-org.vercel.app/"
+        }
+    };
+
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('id');
+
+    if (id && database[id]) {
+        const item = database[id];
+        document.getElementById('page-title').innerText = `${item.title} - Detailed Profile`;
+        document.getElementById('header-title').innerText = item.title;
+        document.getElementById('header-subtitle').innerText = item.subtitle;
+        document.getElementById('p-overview').innerText = item.overview;
+        document.getElementById('p-problem').innerText = item.problem;
+        document.getElementById('p-solution').innerText = item.solution;
+        
+        const featuresContainer = document.getElementById('p-features');
+        featuresContainer.innerHTML = '';
+        item.features.forEach(f => {
+            let li = document.createElement('li'); li.innerText = f; featuresContainer.appendChild(li);
+        });
+        
+        const benContainer = document.getElementById('p-beneficiaries');
+        benContainer.innerHTML = '';
+        item.beneficiaries.forEach(b => {
+            let span = document.createElement('span'); span.className = 'tag'; span.innerText = b; benContainer.appendChild(span);
+        });
+        
+        const impactContainer = document.getElementById('p-impact');
+        impactContainer.innerHTML = '';
+        item.impact.forEach(im => {
+            let li = document.createElement('li'); li.innerText = im; impactContainer.appendChild(li);
+        });
+
+        const sdgContainer = document.getElementById('p-sdgs');
+        sdgContainer.innerHTML = '';
+        item.sdgs.forEach(s => {
+            let span = document.createElement('span'); span.className = 'tag'; span.style.background = '#eafaf1'; span.style.color = 'var(--accent)'; span.innerText = s; sdgContainer.appendChild(span);
+        });
+
+        document.getElementById('p-inst').innerText = item.inst;
+        document.getElementById('p-loc').innerText = item.loc;
+
+        if (item.url && item.url !== "" && item.url !== "#") {
+            document.getElementById('p-url').href = item.url;
+            document.getElementById('demo-card').style.display = 'block';
+        } else {
+            document.getElementById('demo-card').style.display = 'none';
+        }
+    } else {
+        document.getElementById('header-title').innerText = "Resource Track Missing";
+        document.getElementById('p-overview').innerText = "Please return to the primary listing grid.";
+    }
+</script>
+</body>
+</html>
